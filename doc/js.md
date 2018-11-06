@@ -12,5 +12,5 @@
 
 # 扩展阅读
 1. 解构，参考《ECMAScript 6 入门 第3版》的章节：[变量的解构赋值](http://es6.ruanyifeng.com/#docs/destructuring)
-1. [ECMAScript 6 入门 第3版，在线阅读](http://es6.ruanyifeng.com/)
+1. [《ECMAScript 6 入门 第3版》，在线阅读](http://es6.ruanyifeng.com/)
 1. [JS 函数式编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
