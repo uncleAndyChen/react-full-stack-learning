@@ -81,8 +81,8 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
 1. 容器组件（container component）
 1. 应用 redux 的三大原则
 1. React-Redux 库
-    1. connect(mapStateToProps, mapDispatchToProps)
-    1. mapStateToProps
-    1. mapDispatchToProps
+    * connect(mapStateToProps, mapDispatchToProps)
+    * mapStateToProps
+    * mapDispatchToProps
 
 相关知识点，已经总结到文档：[redux 文档](./doc/redux.md)
