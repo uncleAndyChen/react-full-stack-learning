@@ -5,7 +5,7 @@
 npx create-react-app react-and-redux-demo
 ```
 然后以《深入浅出React和Redux》这本书中的例子代码为基础，实际操作和演练。
-《深入浅出React和Redux》，第三章，《从Flux 到Redux》，由于我们都不了解，也没有用过 Flux，建议跳过 3.1，直接看 3.2。
+《深入浅出React和Redux》，第三章，《从Flux 到Redux》，如果你不了解、也没有用过 Flux，建议跳过 3.1，直接看 3.2。
 
 # 文档
 以下是个人整理的相关文档。
@@ -35,7 +35,7 @@ git pull
 
 # PropTypes 依赖变化
 react 的类型检查 PropTypes 自 React v15.5 起已弃用，请使用 prop-types。
-《深入浅出React和Redux》一书示例代码使用的是 react 是 15.4.1，需要做调整是，调整 PropTypes 引用：
+《深入浅出React和Redux》一书示例代码使用的 react 是 15.4.1 版本，需要调整 PropTypes 的引用：
 ```
 // 书中的代码是
 import { PropTypes } from 'react';
@@ -47,7 +47,7 @@ import PropTypes from 'prop-types';
 
 # 第二章
 ## 分支 controlpanel
-[查看分支：controlpanel](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel)
+[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel)
 
 ### 知识点
 1. 组件。
@@ -55,7 +55,7 @@ import PropTypes from 'prop-types';
 1. 父组件通过 props 向子组件传递数据。
 
 ## 分支 controlpanel_with_summary
-[查看分支：controlpanel_with_summary](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel_with_summary)
+[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel_with_summary)
 
 ### 知识点
 1. 组件的 props，父组件向子组件传递数据，包括传递函数。
@@ -63,14 +63,15 @@ import PropTypes from 'prop-types';
 
 # 第三章
 ## 分支 react-redux
-[查看分支：react-redux](https://gitee.com/elsafly/react-and-redux-demo/tree/react-redux)
+[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/react-redux)
 
-到项目根目录，先添加依赖，以下操作会添加最新版的 redux（截止 2018-11-06，版本为：4.0.1） 和 react-redux（截止 2018-11-06，版本为：5.1.0）
+到项目根目录，添加 redux 和 react-redux 依赖。  
+以下操作会添加最新版的 redux（截止 2018-11-06，版本为：4.0.1） 和 react-redux（截止 2018-11-06，版本为：5.1.0）
 ```
 cnpm i redux --save
 cnpm i react-redux --save
 ```
-如果不事先添加依赖 redux，有警告：
+如果不事先添加 redux 依赖而直接添加 react-redux 依赖，会有警告：
 ```
 peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0 || ^4.0.0-0 but none was installed
 ```
@@ -83,4 +84,5 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
     1. connect(mapStateToProps, mapDispatchToProps)
     1. mapStateToProps
     1. mapDispatchToProps
-已经总结到文档：[redux 文档](./doc/redux.md)
+
+相关知识点，已经总结到文档：[redux 文档](./doc/redux.md)
