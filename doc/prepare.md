@@ -1,6 +1,6 @@
 # 准备工作
-安装 node 最新版，[下载页面](https://nodejs.org/zh-cn/)，建议下载【长期维护版本】，而不是【含实验性的最新发布版】。
-安装 cnpm，参考官网：[淘宝 NPM 镜像](https://npm.taobao.org/)
+* 安装 node 最新版，[下载页面](https://nodejs.org/zh-cn/)，建议下载【长期维护版本】，而不是【含实验性的最新发布版】。
+* 安装 cnpm，参考官网：[淘宝 NPM 镜像](https://npm.taobao.org/)
 > 最直接的方式：`npm install -g cnpm --registry=https://registry.npm.taobao.org`
 
 ## JSX
