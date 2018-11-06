@@ -5,6 +5,7 @@
 npx create-react-app react-and-redux-demo
 ```
 然后以《深入浅出React和Redux》这本书中的例子代码为基础，实际操作和演练。
+《深入浅出React和Redux》，第三章，《从Flux 到Redux》，由于我们都不了解，也没有用过 Flux，建议跳过 3.1，直接看 3.2。
 
 # 相关文档
 1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
@@ -53,3 +54,4 @@ react 的类型检查 PropTypes 自 React v15.5 起已弃用，请使用 prop-ty
 ### 知识点
 1. 组件的 props，父组件向子组件传递数据，包括传递函数。
 1. 子组件通过调用父组件的函数，来达到向父组件传递数据的目的。
+

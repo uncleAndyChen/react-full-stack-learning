@@ -4,4 +4,4 @@
 
 # 参考文档/书籍
 1. [ECMAScript 6 入门 第3版，在线阅读](http://es6.ruanyifeng.com/)
-1. [JS 函数式编程指南](https://www.gitbook.com/book/llh911001/mostly-adequate-guide-chinese/details)
+1. [JS 函数式编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
