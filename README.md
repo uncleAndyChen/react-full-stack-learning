@@ -1,6 +1,6 @@
 # react 练习项目
 使用 react 16.6.0（截止 2018-11-05 的最新版）。      
-用 Create React App 初始化项目。  
+用 Create React App 初始化项目：  
 ```
 npx create-react-app react-and-redux-demo
 ```
