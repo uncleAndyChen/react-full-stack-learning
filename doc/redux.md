@@ -80,12 +80,14 @@ const mapDispatchToProps = {
 }
 ```
 
-# 参考文档
+# 参考
 1. 有关 mapStateToProps 与 mapDispatchToProps，还可以参考《深入浅出React和Redux》P71-73，【3.2.5 React-Redux】章节。
 1. [阮一峰的网络日志 -> Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
     > 有对 connect(mapStateToProps, mapDispatchToProps) 的详细解读，上面有关 mapStateToProps 与 mapDispatchToProps 的解读文字，均来自这篇文章。
 1. [Redux 官方文档中文翻译](http://cn.redux.js.org/)
 1. [Redux 文档 -> 英文原版](http://redux.js.org/)
+
+# 扩展阅读
 1. [刘一奇 -> React 与 Redux 系列教程，一共八篇文章](http://www.liuyiqi.cn/tags/React/page/2/)
     1. [官方例子解读--> React 与 Redux 教程（一）connect、applyMiddleware、thunk、webpackHotMiddleware](http://www.liuyiqi.cn/2016/01/19/r2-counter/)
     1. [React 与 Redux 教程（二）Redux的单一状态树完全替代了React的状态机？](http://www.liuyiqi.cn/2016/01/20/r2-state/)
