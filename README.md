@@ -86,3 +86,24 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
     * mapDispatchToProps
 
 相关知识点，已经总结到文档：[redux 文档](./doc/redux.md)
+
+# 第四章
+
+### 知识点
+#### 代码文件组织结构，以及确定模块的边界。
+参考《深入浅出React和Redux》P75-81。
+1. 推荐目录组织方式：按照功能组织。
+1. 把一个目录看做一个模块，那么我们要做的是明确这个模块对外的接口，而这个接口应该实现把内部封装起来。
+1. 目录下人 index.js 文件，就是我们的模块接口。
+1. 各个模块之间只能假设其他模块包含 index.js 文件，要引用模块只能导入 index.js，不能够直接去导人其他文件。
+1. 导人一个目录的时候，默认导人的就是这个目录下的 index.js 文件， index.js 文件中导出的内容，就是这个模块想要公开出来的接口。
+1. 推荐使用 export（命名式）的方式导出模块，而不是用 export default（默认）的方式，因为 export default 在导入时，会增加代码量。
+
+#### 状态树的设计
+参考《深入浅出React和Redux》P81-83。
+1. 一个模块控制一个状态节点。 
+1. 避免冗余数据。
+1. 树形结构扁平。
+1. 只能通过 reducer 纯函数修改 state，不能直接修改 state。
+    * 所以，push 和 unshift 会改变原来那个数组，是不能直接作用于 state 的。
+    * 利用扩展操作符。
