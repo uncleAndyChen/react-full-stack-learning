@@ -16,3 +16,12 @@ npx create-react-app react-and-redux-demo
 # 例子代码
 第一章代码位于 chapter-01，第二章的代码位于  chapter-02，依次类推。  
 子目录名即为分支名，如第四章代码目录下的子目录：`todo_controlled_component`，会有一个对应分支也叫 `todo_controlled_component`。
+
+# 第一章
+分支：[controlpanel](https://gitee.com/elsafly/react-and-redux-demo/controlpanel)
+
+该示例为计数器，其中 PropTypes 的依赖有变化，需要做调整。  
+react 的类型检查 PropTypes 自 React v15.5 起已弃用，请使用 prop-types。  
+书中的例子代码，使用的 react 是 15.4.1，使用方式是：`import { PropTypes } from 'react'`;    
+要改为：`import PropTypes from 'prop-types';`
+
