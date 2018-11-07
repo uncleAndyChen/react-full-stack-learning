@@ -13,7 +13,8 @@ npx create-react-app react-and-redux-demo
 1. [Create React App official website,Getting Started](https://facebook.github.io/create-react-app/docs/getting-started)
 
 # 欢迎提交 PR
-通过 fork + pull request 的方式，参与该项目的完善工作，以下是两大平台的帮助文档。
+本项目主要针对 react 全家桶技术栈，以学习、演示基础代码为目的，欢迎补充知识点与相关示例代码。
+可通过 fork + pull request 的方式，参与到该项目。以下是两大平台的帮助文档。
 * gitee.com  -> [Fork + Pull 模式 ](https://gitee.com/help/articles/4128)
 * github.com -> [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
 
