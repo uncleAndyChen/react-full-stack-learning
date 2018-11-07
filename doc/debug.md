@@ -7,7 +7,7 @@
 1. [堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试代码](./JetBrainsIDESupport.md)，直接在 WebStorm 源代码上打断点，调试起来有点象在 IDEA 下调试 Java 程序，很爽！
 
 ## Redux DevTools
-1. 安装c
+1. 安装插件
 * 以 qq 浏览器为例，搜索：Redux DevTools
 ![](images/ReduxDevToolsInstall.png)
 1. 添加相应代码以支持在浏览器上使用 Redux DevTools 插件。
@@ -17,15 +17,15 @@
     // 将 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 作为 createStore 方法的第三个参数，如下：
     const store = createStore(reducer, initValues, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
     ```
-1. 使用添加
+1. 使用插件
 * npm start 之后，在 chrome 或者 qq 浏览器，按 F12，点击【Redux】，可跟踪 Action 以及 state 的变化。  
 ![](./images/ReduxDevToolsUse.png)
 
 ## React Developer Tools
-1. 安装添加
+1. 安装插件
 * 以 qq 浏览器为例，搜索：React Developer Tools
 ![](./images/ReactDeveloperToolsInstall.png)
-1. 使用添加  
+1. 使用插件  
 ![](./images/ReactDeveloperToolsUse.png)
 
 ## React Perf
