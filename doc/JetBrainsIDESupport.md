@@ -1,4 +1,4 @@
-# WebStorm + chrome + JetBrains IDE Support 插件
+# 堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试代码
 ## 准备工作
 WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是这样），所以，JetBrains IDE Support 插件需要安装到 chrome 上。
 1. [chrome 最新版下载](http://chromecj.com/category/chrome/)
