@@ -2,7 +2,7 @@
 ## 准备工作
 WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是这样），所以，JetBrains IDE Support 插件需要安装到 chrome 上。
 1. [chrome 最新版下载](http://chromecj.com/category/chrome/)
-1. 安装插件与上面的安装方式类似，在应用中心，搜索：JetBrains IDE Support，不过，如果谷歌应用中心，由于众所周知的原因不能访问的话，可以下载离线版进行安装。
+1. 安装插件，在应用中心，搜索：JetBrains IDE Support，不过，如果谷歌应用中心，由于众所周知的原因不能访问的话，可以下载离线版进行安装。
     * [安装包下载](./JetBrains-IDE-Support-2.0.9-Crx4.crx)
     * 下载之后，将文件直接拖至 chrome 的扩展页面，按照提示安装即可。
     ![](./images/WebStormDebugReact04.png)
