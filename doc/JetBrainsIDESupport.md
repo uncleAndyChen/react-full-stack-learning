@@ -35,7 +35,7 @@ WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是�
 开启开发者模式，重新将插件拖上去，问题依旧。
 
 ### 解决
-开启开发者模式之后，重启浏览器，重新安装，就一切正常了。看来开启开发都模式之后，需要重启浏览器才能生效。  
+开启开发者模式之后，重启浏览器，重新安装，就一切正常了。看来开启开发都模式之后，需要重启浏览器才会生效。  
 ![](./images/WebStormDebugReact13.png)  
 ![](./images/WebStormDebugReact14.png)
 
