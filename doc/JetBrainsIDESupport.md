@@ -17,10 +17,10 @@ WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是�
 
 ## 调试
 1. 在 WebStorm 的【Terminal】窗口运行 `npm start`。  
-    > 也可以按照如下配置，就象配置 Java 项目一样，添加启动项，然后直接点击小虫子左边的三角启动项目。 
+    > 也可以按照如下配置，就象用 IDEA 开发 Java 程序一样配置启动项，然后直接点击小虫子左边的三角启动项目。 
      
-    ![](./images/WebStormDebugReact08.png)
     ![](./images/WebStormDebugReact09.png)
+    ![](./images/WebStormDebugReact08.png)
 1. 选择刚才添加的【JavaScript Debug】启动项【jsDebug】，点击 Debug 按钮（小虫子），会打开 chrome 窗口，这时候的操作便会触发调试，尽情享受编程的乐趣吧~~~  
-    ![](./images/WebStormDebugReact10.png)
+    ![](./images/WebStormDebugReact10.png)  
     ![](./images/WebStormDebugReact11.png)
