@@ -1,6 +1,7 @@
 # 《深入浅出React和Redux》例子代码
-第一章代码位于 chapter-01，第二章的代码位于  chapter-02，依次类推。  
-子目录名即为分支名，如第四章代码目录下的子目录：`todo_controlled_component`，会有一个对应分支也叫 `todo_controlled_component`。
+1. [《深入浅出React和Redux》例子代码](https://github.com/mocheng/react-and-redux)
+1. 第一章代码位于 chapter-01，第二章的代码位于  chapter-02，依次类推。
+1. 子目录名即为分支名，如第四章代码目录下的子目录：`todo_controlled_component`，会有一个对应分支也叫 `todo_controlled_component`。
 
 # PropTypes 依赖变化
 react 的类型检查 PropTypes 自 React v15.5 起已弃用，请使用 prop-types。
