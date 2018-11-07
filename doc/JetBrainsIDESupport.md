@@ -10,9 +10,10 @@ WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是�
 1. WebStorm 和 JetBrains IDE Support 端口设置成一样。  
     ![](./images/WebStormDebugReact03.png)
     ![](./images/WebStormDebugReact06.png)
-1. 添加启动项，只能选择 chrome 浏览器，如下图：  
-    ![](./images/WebStormDebugReact01.png)
-    ![](./images/WebStormDebugReact02.png)
+1. 添加 JavaScript Debug 启动项。  
+    ![添加 JavaScript Debug 启动项](./images/WebStormDebugReact01.png)
+    只能选择 chrome 浏览器  
+    ![只能选择 chrome 浏览器](./images/WebStormDebugReact02.png)
 
 ## 调试
 1. 在 WebStorm 的【Terminal】窗口运行 `npm start`。  
