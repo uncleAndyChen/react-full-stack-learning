@@ -1,10 +1,10 @@
-# 调试
+# React 项目调试技巧
 1. 借助以下插件进行调试。
     * Redux DevTools
     * React Developer Tools
     * React Perf
 1. F12 之后，在源代码处打断点。
-1. [WebStorm + JetBrains IDE Support 插件](./JetBrainsIDESupport.md)，直接在 WebStorm 源代码上打断点，调试起来有点象在 IDEA 下调试 Java 程序，很爽！
+1. [堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试代码](./JetBrainsIDESupport.md)，直接在 WebStorm 源代码上打断点，调试起来有点象在 IDEA 下调试 Java 程序，很爽！
 
 ## Redux DevTools
 1. 安装
