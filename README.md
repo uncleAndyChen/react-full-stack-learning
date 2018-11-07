@@ -23,6 +23,7 @@
 1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
 1. [js 知识点、参考链接](./doc/js.md)
 1. [redux 知识点、参考链接](./doc/redux.md)
+1. [React 项目调试技巧](./doc/debug.md)
 
 # 分支说明
 用 Create React App 初始化项目，所有练习代码都会体现到 master 分支。  

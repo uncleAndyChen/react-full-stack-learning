@@ -97,3 +97,6 @@ const mapDispatchToProps = {
     1. [官方例子解读--> React 与 Redux 教程（一）connect、applyMiddleware、thunk、webpackHotMiddleware](http://www.liuyiqi.cn/2016/01/19/r2-counter/)
     1. [React 与 Redux 教程（二）Redux的单一状态树完全替代了React的状态机？](http://www.liuyiqi.cn/2016/01/20/r2-state/)
     1. ...
+1. [理解Redux应用架构——（一）Redux结构概览](https://www.jianshu.com/p/e7937e1cfc05)
+1. [理解Redux应用架构——（二）创建store的createStore](https://www.jianshu.com/p/53d010fb76d8)
+1. [理解Redux应用架构——（三）让你爱上的Redux middleware](https://www.jianshu.com/p/aa960de69596)
