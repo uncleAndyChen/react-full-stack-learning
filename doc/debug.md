@@ -8,11 +8,11 @@
 
 ## Redux DevTools
 1. 安装
-以 qq 浏览器为例，搜索：Redux
+以 qq 浏览器为例，搜索：Redux DevTools
 ![](images/ReduxDevToolsInstall.png)
 1. 代码添加
-    [参考](https://github.com/zalmoxisus/redux-devtools-extension#usage)
-    对于分支 react-redux，要加上 redux-devtools-extension，只需要作如下调整:
+    * [参考](https://github.com/zalmoxisus/redux-devtools-extension#usage)
+    * 对于分支 react-redux，要加上 redux-devtools-extension，只需要作如下调整:
     ```
     // 将 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 作为 createStore 方法的第三个参数，如下：
     const store = createStore(reducer, initValues, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
