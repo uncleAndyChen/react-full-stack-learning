@@ -49,8 +49,11 @@
         * 只能在浏览器端被调用，在服务器端使用 react 的时候不会被调用。
         * 推荐在该方法内调用 api 来获取服务器端数据，从而进行页面渲染工作。
         
+# propTypes 检查
+* 开发者在代码中定义prop Types，在开发过程中避免犯错，但是在发布产品代码时，用一种自动的方式将 prop Types 去掉，这样最终部署到产品环境的代码就会更优。
+* 现有的 babel-react-optimize 就具有这个功能，可以通过 npm 安装，但是应该确保只在发布产品代码时使用它。
+
 # forceUpdate()
-第二章的第一个例子，有用到 forceUpdate()。
 * 默认情况下，当组件的 state 或 props 改变时，组件将重新渲染。
 * 调用 forceUpdate() 会导致组件跳过 shouldComponentUpdate()，直接调用 render()。
 * 这将触发组件的正常生命周期方法，包括每个子组件的 shouldComponentUpdate() 方法。
@@ -59,3 +62,8 @@
 1. 如果你的 render() 方法依赖于一些其他的数据，你可以告诉 React 组件需要通过调用 forceUpdate() 重新渲染。
 1. 有些变量不在 state上，你又想达到这个变量更新的时候，重新渲染。
 1. state 里的某个变量层次太深，更新的时候没有自动触发 render()。
+
+# 扩展阅读
+1. [react 中文社区文档](https://react.docschina.org/docs/hello-world.html)
+1. [Create React App official website,Getting Started](https://facebook.github.io/create-react-app/docs/getting-started)
+ 

@@ -88,7 +88,7 @@ const mapDispatchToProps = {
 # 参考
 1. 有关 mapStateToProps 与 mapDispatchToProps，还可以参考《深入浅出React和Redux》P71-73，【3.2.5 React-Redux】章节。
 1. [阮一峰的网络日志 -> Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
-    > 有对 connect(mapStateToProps, mapDispatchToProps)() 的详细解读，上面有关 mapStateToProps 与 mapDispatchToProps 的解读文字，均来自这篇文章（略有修改）。
+    > 有对 connect(mapStateToProps, mapDispatchToProps)(componentName) 的详细解读，上面有关 mapStateToProps 与 mapDispatchToProps 的解读文字，均来自这篇文章（略有修改）。
 1. [Redux 官方文档中文翻译](http://cn.redux.js.org/)
 1. [Redux 文档 -> 英文原版](http://redux.js.org/)
 
