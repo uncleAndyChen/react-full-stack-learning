@@ -8,7 +8,8 @@ WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是�
     ![](./images/WebStormDebugReact04.png)
     ![](./images/WebStormDebugReact05.png)
 1. WebStorm 和 JetBrains IDE Support 端口设置成一样。  
-    ![](./images/WebStormDebugReact03.png)
+    ![](./images/WebStormDebugReact03.png)  
+    点击 JetBrains IDE Support 插件的 logo 右键，出来如下窗口，点击【Options】设置端口  
     ![](./images/WebStormDebugReact06.png)
 1. 添加 JavaScript Debug 启动项。  
     ![添加 JavaScript Debug 启动项](./images/WebStormDebugReact01.png)  
