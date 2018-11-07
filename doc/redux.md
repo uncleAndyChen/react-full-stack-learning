@@ -42,8 +42,9 @@ UI 组件负责 UI 的呈现
 * 带有内部状态
 * 使用 Redux 的 API
 
+# connect(mapStateToProps, mapDispatchToProps)(componentName)
 ## mapStateToProps
-管 UI 组件的输入。
+输入逻辑：外部的数据（即state对象）如何转换为 UI 组件的参数。
 * mapStateToProps 是一个函数。它的作用就是像它的名字那样，建立一个从（外部的）state 对象到（UI 组件的）props 对象的映射关系。
 * 作为函数，mapStateToProps 执行后应该返回一个对象，里面的每一个键值对就是一个映射。
 * mapStateToProps 会订阅 store，每当 state 更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染。
@@ -52,7 +53,7 @@ UI 组件负责 UI 的呈现
 * connect 方法可以省略 mapStateToProps 参数，那样的话，UI 组件就不会订阅 store，就是说 store 的更新不会引起 UI 组件的更新。
 
 ## mapDispatchToProps
-管 UI 组件的输出。
+输出逻辑：用户发出的动作如何变为 Action 对象，从 UI 组件传出去。
 * mapDispatchToProps 是 connect 函数的第二个参数，用来建立 UI 组件的参数到 store.dispatch 方法的映射。
 * 也就是说，它定义了哪些用户的操作应该当作 Action，传给 store。
 * mapDispatchToProps 可以是一个函数，也可以是一个对象。
@@ -87,7 +88,7 @@ const mapDispatchToProps = {
 # 参考
 1. 有关 mapStateToProps 与 mapDispatchToProps，还可以参考《深入浅出React和Redux》P71-73，【3.2.5 React-Redux】章节。
 1. [阮一峰的网络日志 -> Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
-    > 有对 connect(mapStateToProps, mapDispatchToProps) 的详细解读，上面有关 mapStateToProps 与 mapDispatchToProps 的解读文字，均来自这篇文章。
+    > 有对 connect(mapStateToProps, mapDispatchToProps)() 的详细解读，上面有关 mapStateToProps 与 mapDispatchToProps 的解读文字，均来自这篇文章（略有修改）。
 1. [Redux 官方文档中文翻译](http://cn.redux.js.org/)
 1. [Redux 文档 -> 英文原版](http://redux.js.org/)
 

@@ -7,16 +7,20 @@ npx create-react-app react-and-redux-demo
 然后以《深入浅出React和Redux》这本书中的例子代码为基础，实际操作和演练。
 《深入浅出React和Redux》，第三章，《从Flux 到Redux》，如果你不了解、也没有用过 Flux，建议跳过 3.1，直接看 3.2。
 
-# 文档
-以下是个人整理的相关文档。
-1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
-1. [js 知识点、参考链接](./doc/js.md)
-1. [redux 文档](./doc/redux.md)
-
-# 参考
+参考  
 1. [《深入浅出React和Redux》代码](https://github.com/mocheng/react-and-redux)
 1. [react 中文社区文档](https://react.docschina.org/docs/hello-world.html)
 1. [Create React App official website,Getting Started](https://facebook.github.io/create-react-app/docs/getting-started)
+
+# 欢迎提交 PR
+通过 fork + pull request 的方式，参与该项目的完善工作，以下是两大平台的帮助文档。
+* gitee.com  -> [Fork + Pull 模式 ](https://gitee.com/help/articles/4128)
+* github.com -> [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
+
+# 个人整理的相关知识点文档
+1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
+1. [js 知识点、参考链接](./doc/js.md)
+1. [redux 知识点、参考链接](./doc/redux.md)
 
 # master 分支
 为 Create React App 初始化项目，之后的练习代码都会体现到这个分支。  
@@ -85,7 +89,7 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
     * mapStateToProps
     * mapDispatchToProps
 
-相关知识点，已经总结到文档：[redux 文档](./doc/redux.md)
+相关知识点，已经总结到文档：[redux 知识点、参考链接](./doc/redux.md)
 
 # 第四章
 
