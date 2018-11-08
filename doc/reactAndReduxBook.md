@@ -78,3 +78,17 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
 1. 只能通过 reducer 纯函数修改 state，不能直接修改 state。
     * 所以，push 和 unshift 会改变原来那个数组，是不能直接作用于 state 的。
     * 利用扩展操作符。
+
+#### combineReducers
+* 随着应用变得复杂，需要对 reducer 函数 进行拆分，拆分后的每一块独立负责管理 state 的一部分。
+* combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后就可以对这个 reducer 调用 createStore。
+* 合并后的 reducer 可以调用各个子 reducer，并把它们的结果合并成一个 state 对象。state 对象的结构由传入的多个 reducer 的 key 决定。
+* 最终，state 对象的结构会是这样的：
+    ```
+    {
+      reducer1: ...
+      reducer2: ...
+    }
+    ```
+
+那么，使用中的注意事项是什么呢？看笔者总结的踩坑经验：<a href="./redux.md/#stateKey">state 的 key</a>
