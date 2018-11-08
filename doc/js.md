@@ -12,5 +12,7 @@
 
 # 扩展阅读
 1. 解构赋值，参考《ECMAScript 6 入门 第3版》的章节：[变量的解构赋值](http://es6.ruanyifeng.com/#docs/destructuring)
+1. [数组的扩展](http://es6.ruanyifeng.com/?search=%E6%89%A9%E5%B1%95%E6%93%8D%E4%BD%9C&x=7&y=9#docs/array)
+    > 扩展操作符可以在一对｛｝符号中把一个对象展开，这样，在｛｝中后面的部分的字段值，可以覆盖展开的部分。
 1. [《ECMAScript 6 入门 第3版》，在线阅读](http://es6.ruanyifeng.com/)
 1. [JS 函数式编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)

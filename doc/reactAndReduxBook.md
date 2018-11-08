@@ -80,15 +80,24 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
     * 利用扩展操作符。
 
 #### combineReducers
-* 随着应用变得复杂，需要对 reducer 函数 进行拆分，拆分后的每一块独立负责管理 state 的一部分。
+* 利用 combineReducers 可以把多个只针对局部状态的“小的”reducer 合并为一个操纵整个状态树的“大的“ reducer。
+* 更妙的是，没有两个”小的“ reducer 会发生冲突，因为无论怎么组合，状态树上一个子状态都只会被一个 reducer 处理，Redux 就是用这种方法隔绝了各个模块。
+* 很明显，无论我们有多少“小的” reducer，也无论如何组合，都不用在乎它们被因为调用的顺序，因为调用顺序和结果没有关系。
+
+* 随着应用变得复杂，需要对 reducer 函数进行拆分，拆分后的每一块独立负责管理 state 的一部分。
 * combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后就可以对这个 reducer 调用 createStore。
 * 合并后的 reducer 可以调用各个子 reducer，并把它们的结果合并成一个 state 对象。state 对象的结构由传入的多个 reducer 的 key 决定。
 * 最终，state 对象的结构会是这样的：
     ```
     {
-      reducer1: ...
-      reducer2: ...
+      todos: ...
+      filter: ...
     }
     ```
+* 通过为传入对象的 reducer 命名不同来控制 state key 的命名。例如，你可以调用 combineReducers({ todos: todoReducer, filter: filterReducer }) 将 state 结构变为 { todos, counter }。
+* 个人认为，更好的做法是直接用 reducer 名作为 state 的 key，使用 ES6 的简写方法：combineReducers({ todos, filter })。这与 combineReducers({ todos: todoReducer, filter: filterReducer }) 产生的 state 结果是一样的。
 
-那么，使用中的注意事项是什么呢？看笔者总结的踩坑经验：<a href="./redux.md#stateKey">state 的 key</a>
+关于 state key 的使用，实际开发过程中还需要注意些什么呢？看笔者总结的踩坑经验：<a href="./redux.md#stateKey">state 的 key</a>
+
+#### bindActionCreators
+把原来笨重的函数调用过程封装起来，使最终的业务代码更加优雅。
