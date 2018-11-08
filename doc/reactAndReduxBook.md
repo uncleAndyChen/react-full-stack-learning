@@ -91,4 +91,4 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
     }
     ```
 
-那么，使用中的注意事项是什么呢？看笔者总结的踩坑经验：<a href="./redux.md/#stateKey">state 的 key</a>
+那么，使用中的注意事项是什么呢？看笔者总结的踩坑经验：<a href="./redux.md#stateKey">state 的 key</a>
