@@ -154,12 +154,12 @@ More info: https://fb.me/react-controlled-components
     in Provider (at src/index.js:9)
 ```
 
-这是因为 todoItem.js:13 代码中的 checkbox 的 checked 属性没有用 state 来记录，所以会警告，这并不影响该示例的正常运行。 
+这是因为 todoItem.js:13 代码中的 checkbox 的 checked 属性没有用 state 来记录，所以会警告，但这并不影响该示例的正常运行。 
 关于页面控件是否受控，以及相关问题，请看官方文档：[Controlled Components](https://reactjs.org/docs/forms.html#controlled-components)
 
 #### 解决
-为了消除以上警告，同时，为了更方便理解 react state 变化会引起页面的重新渲染，作如下修改：
-1. 将 checkbox 的 onClick 事件删除，这样，点击 checkbox 控件不会有任何反应。
+为了消除以上警告，同时，为了更方便理解 state 变化会引起页面的重新渲染，作如下修改：
+1. 将 checkbox 的 onClick 事件删除，这样，点击 checkbox 控件不会有任何反应（checkbox 设置了只读属性）。
 1. 将设置待办事项状态的点击事件放到 label 上，添加了 a 标签。
     > 不过，a 标签的 href 属性只是 `#` 会引发另外的警告，这个下面再解决。
 1. 同时将 checkbox 的 checked 属性添加上去，其值就是待办事项的数据：currentState.completed，这是一个 bool 变量。
@@ -185,7 +185,7 @@ More info: https://fb.me/react-controlled-components
 #### 解决
 参照文章[anchor-is-valid](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md)，作如下调整：
 
-将 a 标签 `<a href="#" onClick={onToggle}>{text}` 换成 button 控件，同时增加 button 相关的 style.css 文件放到 src 根目录下。
+将 a 标签 `<a href="#" onClick={onToggle}>{text}</a>` 换成 button 控件，同时增加 button 相关的 style.css 文件放到 src 根目录下。
 ```
 <button
     type="button"
@@ -195,12 +195,11 @@ More info: https://fb.me/react-controlled-components
 </button>
 ```
 
-将 link.js 组件中的 a 标签也换成 button，这里不再贴代码了，直接代码看文件吧。
+将 link.js 组件中的 a 标签也换成 button，这里就不贴代码了，直接[看代码文件](../src/filter/views/link.js)吧。
 
 最后还有一个警告，在点击【添加】按钮的时候触发的，没再深入研究。
 ```
 [Deprecation] Using unescaped '#' characters in a data URI body is deprecated and will be removed in M71, around December 2018. 
 Please use '%23' instead. See https://www.chromestatus.com/features/5656049583390720 for more details.
 ```
-
 
