@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.6.0",
+    "react-addons-perf": "^15.4.2",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.0",
     "react-scripts": "2.1.1",

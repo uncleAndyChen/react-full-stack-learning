@@ -1,12 +1,11 @@
-import {createStore} from 'redux';
-import reducer from './Reducer.js';
+import {createStore, combineReducers} from 'redux';
 
-const initValues = {
-  'First': 0,
-  'Second': 10,
-  'Third': 20
-};
+import {reducer as todoReducer} from './todos';
+import {reducer as filterReducer} from './filter';
 
-const store = createStore(reducer, initValues, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const reducer = combineReducers({
+  todos: todoReducer,
+  filter: filterReducer
+});
 
-export default store;
+export default createStore(reducer, {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

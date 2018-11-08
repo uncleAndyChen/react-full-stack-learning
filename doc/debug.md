@@ -29,7 +29,11 @@
     ![](./images/ReactDeveloperToolsUse.png)
 
 ## React Perf
-性能插件，具体使用可参考《深入浅出React和Redux》，P101-102，【4.6.3 工具应用】章节。
+性能插件，具体使用可参考《深入浅出React和Redux》，P101-102，【4.6.3 工具应用】章节。  
+
+### 扩展阅读  
+* [介绍 React 性能分析器](http://react.css88.com/blog/2018/09/10/introducing-the-react-profiler.html)
+* [React 的慢与快：优化 React 应用实战](https://www.jianshu.com/p/04583fca939b)
 
 ## F12 之后，在源代码处打断点
 可 F12 之后，点击【Sources】，在想要监控变量的地方打断点，这种方式还是非常方便的。
