@@ -18,7 +18,7 @@ FilterLink 的 props 有一个成员，叫：filter，它是在哪儿赋值的�
   </ul>
 ```
 
-从以上代码可知，是通过数组 FILTER_TITLES 的 key 来初始化过滤链接（全部、待办、完成）的。
+从以上代码可知，是通过数组 FILTER_TITLES 的 key 来初始化过滤链接（全部、待办、完成）的。  
 再看一下数组 FILTER_TITLES 的定义：
 ```
 const FILTER_TITLES = {
@@ -95,7 +95,7 @@ export const setVisibilityFilter = filter => ({ type: types.SET_VISIBILITY_FILTE
 ```
 
 分析到这里，问题来了，visibilityFilter 接收到这个 action 并执行之后，直接返回的是 action.filter，接下来又发生了什么？  
-先看一下 rcux 文档关于 reducer 的描述（[传送门](https://cn.redux.js.org/docs/basics/Reducers.html)）。  
+先看一下 rcux 文档关于 reducer 的描述（[传送门](https://cn.redux.js.org/docs/basics/Reducers.html)）：  
 1. reducers 指定了应用状态的变化如何响应 actions 并发送到 store 的，记住 actions 只是描述了有事情发生了这一事实，并没有描述应用如何更新 state。
 1. reducer 就是一个纯函数，接收旧的 state 和 action，返回新的 state。
 1. 注意每个 reducer 只负责管理全局 state 中它负责的一部分。每个 reducer 的 state 参数都不同，分别对应它管理的那部分 state 数据。
@@ -140,7 +140,7 @@ export const getCompletedTodoCount = createSelector(
 ```
 
 # createSelectorg
-关于 createSelectorg 方法，这里不做分析，请参考：  
+上面的代码，用到了 createSelectorg 来优化性能，有关 createSelectorg 方法，这里不做分析，请参考：  
 * 《深入浅出React和Redux》P122，【5.3 用reselect 提高数据获取性能】
 * [翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
 * [模拟代码帮助理解reselect的createSelector函数](https://www.tangshuang.net/3839.html)
