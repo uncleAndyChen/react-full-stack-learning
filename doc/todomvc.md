@@ -1,4 +1,4 @@
-# redux 官司方示例 todomvc，todoList 过滤事件解析
+# redux 官方示例 todomvc，todoList 过滤事件解析
 [官方 todomvc 示例源码](https://github.com/reduxjs/redux/tree/master/examples/todomvc)
 
 # 理解代码逻辑
