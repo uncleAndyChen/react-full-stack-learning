@@ -141,6 +141,6 @@ export const getCompletedTodoCount = createSelector(
 
 # createSelectorg
 上面的代码，用到了 createSelectorg 来优化性能，有关 createSelectorg 方法，这里不做分析，请参考：  
-* 《深入浅出React和Redux》P122，【5.3 用reselect 提高数据获取性能】
+* 《深入浅出React和Redux》P122，【5.3 用reselect 提高数据获取性能】章节。
 * [翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
 * [模拟代码帮助理解reselect的createSelector函数](https://www.tangshuang.net/3839.html)
