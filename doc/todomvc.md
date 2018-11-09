@@ -1,4 +1,4 @@
-# redux 官方示例 todomvc，todoList 过滤事件解析
+# redux 官方示例 todomvc 中的 todoList 过滤事件解析
 [官方 todomvc 示例源码](https://github.com/reduxjs/redux/tree/master/examples/todomvc)
 
 # 理解代码逻辑
@@ -18,6 +18,7 @@ FilterLink 的 props 有一个成员，叫：filter，它是在哪儿赋值的�
   </ul>
 ```
 
+从以上代码可知，是通过数组 FILTER_TITLES 的 key 来初始化过滤链接（全部、待办、完成）的。
 再看一下数组 FILTER_TITLES 的定义：
 ```
 const FILTER_TITLES = {
@@ -59,7 +60,7 @@ export const SHOW_ACTIVE = 'show_active'
 
 在界面上，页面末尾那三个链接【All】、【Active】、【Completed】，就是三个 FilterLink 组件，通过上面的分析，这三个组件的 props.filter 分别是 show_all、show_active、show_completed。  
 FilterLink 组件，又用了一个UI组件 Link，在 Link 组件中，执行的点击事件是： `onClick={() => setFilter()}`。
-setFilter 函数是在窗口组件 FilterLink 的 mapDispatchToProps 中定义的：
+setFilter 函数是在容器组件 FilterLink 的 mapDispatchToProps 中定义的：
 ```
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setFilter: () => {
@@ -68,11 +69,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 ```
 
-它要做的事，只是向 store 发出一个 dispatch，那么，最终执行者在哪儿呢？
+它要做的事，只是向 store 发出一个 dispatch，那么，最终执行者在哪儿呢？  
 回答这个问题，需要了解 redux 原理。
-redux 的 store 由函数 createStore 返回，该函数的第一个参数是 reducers，是包含了各个模块的 reducer。
-而 reducers，在这个例子中，是用 redux 提供的 combineReducers() 函数来整合得到的一个集合（更准确的说，是一个数组），这样，store 就可以根据各个模块的 reducer key 来统一管理各个模块的 state 以及 actions（模块的行为，体现在自己模块的 reducer 中定义的各个函数）。  
-对于 combineReducers()，官方是这样描述的：combineReducers() 所做的只是生成一个函数，这个函数来调用你的一系列 reducer，每个 reducer 根据它们的 key 来筛选出 state 中的一部分数据并处理，然后这个生成的函数再将所有 reducer 的结果合并成一个大的对象。
+* redux 的 store 由函数 createStore 返回，该函数的第一个参数是 reducers，是包含了各个模块的 reducer。  
+* 而 reducers，在这个例子中，是用 redux 提供的 combineReducers() 函数来整合得到的一个集合（更准确的说，是一个数组），这样，store 就可以根据各个模块的 reducer key 来统一管理各个模块的 state 以及 actions（模块的行为，体现在自己模块的 reducer 中定义的各个函数）。    
+* 对于 combineReducers()，官方是这样描述的：combineReducers() 所做的只是生成一个函数，这个函数来调用你的一系列 reducer，每个 reducer 根据它们的 key 来筛选出 state 中的一部分数据并处理，然后这个生成的函数再将所有 reducer 的结果合并成一个大的对象。
 
 了解了这个原理之后，回到刚才的问题，Link 组件的点击事件，最终的行为，是 reducer（文件 `src/reducers/visibilityFilter.js` 定义的函数） visibilityFilter，其定义如下
 ```
@@ -86,8 +87,7 @@ const visibilityFilter = (state = SHOW_ALL, action) => {
 };
 ```
 
-该方法的默认行为是返回 SHOW_ALL（常量），即返回字符串 `show_all`，点击某一个链接时，返回的是 action 传过来的 filter。  
-这个 action 又是在哪儿定义的呢？  
+该方法的默认行为是返回 SHOW_ALL（常量），即返回字符串 `show_all`，点击某一个链接时，返回的是 action 传过来的 filter。那这个 action 又是在哪儿定义的呢？    
 从源代码中可以看出，派发的 dispatch 是：`dispatch(setVisibilityFilter(ownProps.filter))`。  
 再看上下文，不难发现，该 action 是在 `src/actions/index.js` 下定义的，setVisibilityFilter 的定义如下： 
 ```
@@ -95,7 +95,7 @@ export const setVisibilityFilter = filter => ({ type: types.SET_VISIBILITY_FILTE
 ```
 
 分析到这里，问题来了，visibilityFilter 接收到这个 action 并执行之后，直接返回的是 action.filter，接下来又发生了什么？  
-先看一下 rcux 文档关于 reducer 的描述。[传送门](https://cn.redux.js.org/docs/basics/Reducers.html)  
+先看一下 rcux 文档关于 reducer 的描述（[传送门](https://cn.redux.js.org/docs/basics/Reducers.html)）。  
 1. reducers 指定了应用状态的变化如何响应 actions 并发送到 store 的，记住 actions 只是描述了有事情发生了这一事实，并没有描述应用如何更新 state。
 1. reducer 就是一个纯函数，接收旧的 state 和 action，返回新的 state。
 1. 注意每个 reducer 只负责管理全局 state 中它负责的一部分。每个 reducer 的 state 参数都不同，分别对应它管理的那部分 state 数据。
@@ -140,7 +140,7 @@ export const getCompletedTodoCount = createSelector(
 ```
 
 # createSelectorg
-扩展阅读  
+关于 createSelectorg 方法，这里不做分析，请参考：  
 * 《深入浅出React和Redux》P122，【5.3 用reselect 提高数据获取性能】
 * [翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
 * [模拟代码帮助理解reselect的createSelector函数](https://www.tangshuang.net/3839.html)
