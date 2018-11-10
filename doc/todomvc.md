@@ -6,6 +6,7 @@
 git clone https://github.com/reduxjs/redux.git
 cd redux/examples/todomvc/
 cnpm i
+npm start
 ```
 
 # 理解代码逻辑
@@ -153,10 +154,14 @@ export const getCompletedTodoCount = createSelector(
 * [模拟代码帮助理解reselect的createSelector函数](https://www.tangshuang.net/3839.html)
 
 # 源码修改
-## Received the string `true` for the boolean attribute `autoFocus`
+> 题外话。本人有轻度代码洁癖，只要有警告，我会认为代码还有需要完善的地方，只要有时间我就会着手去解决它，去了解其背后的原因，了解为什么会发出警告，以及解决方案是什么，最终消除这些影响代码质量的“隐患”。  
+通过解决这类警告，会让自己对相关代码的理解更加深入，做到知其然，并且知其所以然，同时，能够让自己对相关知识点印象深刻。  
+
+## Received the string `true` for the boolean attribute `autoFocus` ...
 完整警告信息如下：
 ```
-Warning: Received the string `true` for the boolean attribute `autoFocus`. Although this works, it will not work as expected if you pass the string "false". Did you mean autoFocus={true}?
+Warning: Received the string `true` for the boolean attribute `autoFocus`. Although this works, 
+it will not work as expected if you pass the string "false". Did you mean autoFocus={true}?
     in input (at TodoTextInput.js:40)
     in TodoTextInput (at Header.js:8)
     in header (at Header.js:6)
@@ -187,9 +192,12 @@ Warning: Received the string `true` for the boolean attribute `autoFocus`. Altho
 
 根据友好的提示信息，将上面的 `autoFocus="true"` 改为 `autoFocus={true}` 即可。
 
-## Failed prop type: You provided a `checked` prop to a form field without an `onChange` handler
+## Failed prop type: You provided a `checked` prop to a form field without an `onChange` handler ...
+完整警告信息如下：
 ```
-index.js:1452 Warning: Failed prop type: You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.
+index.js:1452 Warning: Failed prop type: You provided a `checked` prop to a form field without an `onChange` handler. 
+This will render a read-only field. 
+If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.
     in input (at MainSection.js:12)
     in span (at MainSection.js:11)
     in section (at MainSection.js:8)
@@ -208,7 +216,7 @@ index.js:1452 Warning: Failed prop type: You provided a `checked` prop to a form
   />
 ```
 
-从提示信息 `You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field.` 看。  
+从提示信息 You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. 看。  
 我的理解是：设置了 checked 属性，但是又没有提供 onChange 事件来更新它，那么，将会自动为其设置一个 read-only 属性。  
 将上面的代码，去掉 className 属性，如下：
 ```
@@ -217,9 +225,9 @@ index.js:1452 Warning: Failed prop type: You provided a `checked` prop to a form
     checked={completedCount === todosCount}
   />
 ```
-再看界面，这时候，一个可以看到是否选中状态的复选框出现了，它确实是只读的，点击没有反应，当所有待办事项变成完成状态时，该 checkbox 会被设置为选中状态。  
-再看后面的提示 `If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly``  
-如果该 checkbox 是可变的，那么，请为其设置一个默认值，否则，要么设置 onChange 事件，要么设置 readOnly 属性。  
+再看界面，这时候，一个可以看到是否选中状态的复选框出现了，它确实是只读的，点击没有反应，当所有待办事项变成完成状态时，该 checkbox 会被设置为选中状态，否则为非选中状态。  
+再看后面的提示 If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`  
+我的理解是：如果该 checkbox 是可变的，那么，请为其设置一个默认值，否则，要么设置 onChange 事件，要么设置 readOnly 属性。  
 设置默认值，例如设置默认选中，可以这样：
 ```
   <input
@@ -230,7 +238,8 @@ index.js:1452 Warning: Failed prop type: You provided a `checked` prop to a form
 
 如果为其设置默认值 defaultChecked，但不动态设置 checked 属性，是不会有上面的警告的，但我们需要动态为其设置 checked 属性，这样在界面上能看出来是否为全部选中状态（向下的箭头颜色有差别，更详细的，请运行起来查看实际效果）。
 
-很明显，如果要为其设置 checked 属性，设置 defaultChecked 是没有意义的（即使设置了，也还是会报同样的警告），所以，为了消除这个警告，有两种解决办法：
+很明显，如果要为其设置 checked 属性，设置 defaultChecked 是没有意义的（即使设置了，也还是会报同样的警告）。  
+所以，从提示信息看上，为了消除这个警告，有两种解决办法：
 1. 设置 readOnly 属性。
     ```
       <input
@@ -247,12 +256,12 @@ index.js:1452 Warning: Failed prop type: You provided a `checked` prop to a form
         onChange={()=>{}}
       />
     ```
-对于这个例子，设置 readOnly 是最好的方案，本来也是需要只读的，设置“空”事件有点莫名其妙。
+对于这个例子，设置 readOnly 是最好的方案，本来也是需要只读的嘛。设置“空”事件有点莫名其妙。
 
-## 解读第二个警告
+### 解读第二个警告
 至于为什么 react 会有这样的检查，[stackoverflow.com 网站上有一个网友的回答](https://stackoverflow.com/questions/36715901/reactjs-error-warning)，我认为是比较贴切的，摘录如下：
 
-### Controlled Components
+#### Controlled Components
 Attributes needed:
 1. `value - <input> (not checkbox or radio), <select>, <textbox> or checked for (checkbox or radio).`
 1. `onChange`
@@ -268,7 +277,7 @@ Attributes needed:
 />
 ```
 
-### Uncontrolled Components
+#### Uncontrolled Components
 Attributes needed:
 ```
 defaultValue - <input> (not checkbox or radio), <select>, <textbox> or defaultChecked for (checkbox or radio).
@@ -280,3 +289,7 @@ React sets the initial value using [defaultValue or defaultChecked](https://reac
   defaultChecked={ this.props.checked } 
 />
 ```
+
+#### 扩展阅读
+* [Forms](https://reactjs.org/docs/forms.html)
+* [Uncontrolled Components](https://reactjs.org/docs/uncontrolled-components.html#default-values)
