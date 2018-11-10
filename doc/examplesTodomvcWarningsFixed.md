@@ -5,7 +5,9 @@
 
 [官方 todomvc 示例源码](https://github.com/reduxjs/redux/tree/master/examples/todomvc)  
 
-其实改动很小，主要是看解决思路
+其实改动很小，主要是看解决思路。
+
+![两个大大的红色警告](./images/examplesTodomvcWarnings.png)
 
 ## examples/todomvc/src/components/TodoTextInput.js
 完整警告信息如下：
