@@ -298,5 +298,6 @@ React sets the initial value using [defaultValue or defaultChecked](https://reac
 ```
 
 #### 扩展阅读
+是有关可控组件和非可控组件的。
 * [Forms](https://reactjs.org/docs/forms.html)
 * [Uncontrolled Components](https://reactjs.org/docs/uncontrolled-components.html#default-values)
