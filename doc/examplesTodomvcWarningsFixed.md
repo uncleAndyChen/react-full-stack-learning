@@ -6,7 +6,7 @@
 [官方 todomvc 示例源码](https://github.com/reduxjs/redux/tree/master/examples/todomvc)  
 已提 PR，不知道会不会被接受。
 
-其实改动很小，主要是看解决思路。
+其实改动很小，主要看解决思路和理解相关的知识点。
 
 ![两个大大的红色警告](./images/examplesTodomvcWarnings.png)
 
