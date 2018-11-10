@@ -22,7 +22,7 @@
 # 个人整理的相关知识点文档
 1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
 1. [js 知识点、参考链接](./doc/js.md)
-1. [redux 知识点、参考链接](./doc/redux.md)
+1. [redux 知识点](./doc/redux.md)
 1. [React 项目调试技巧](./doc/debug.md)
 1. [堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试代码](./doc/JetBrainsIDESupport.md)
 1. [redux 官方示例 todomvc 中的 todoList 过滤事件解析](./doc/examplesTodomvcGetVisibleTodos.md)
