@@ -4,6 +4,7 @@
   通过解决这类问题，会让自己对相关代码的理解更加深入，做到知其然，并且知其所以然，同时，能够让自己对相关知识点印象深刻。  
 
 [官方 todomvc 示例源码](https://github.com/reduxjs/redux/tree/master/examples/todomvc)  
+已提 PR，不知道会不会被接受。
 
 其实改动很小，主要是看解决思路。
 
