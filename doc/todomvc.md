@@ -251,7 +251,7 @@ If the field should be mutable use `defaultChecked`. Otherwise, set either `onCh
     ```
       <input
         type="checkbox"
-        defaultChecked={true}
+        defaultChecked={completedCount === todosCount}
         readOnly
       />
     ```
@@ -259,7 +259,7 @@ If the field should be mutable use `defaultChecked`. Otherwise, set either `onCh
     ```
       <input
         type="checkbox"
-        defaultChecked={true}
+        defaultChecked={completedCount === todosCount}
         onChange={()=>{}}
       />
     ```
