@@ -217,7 +217,10 @@ If the field should be mutable use `defaultChecked`. Otherwise, set either `onCh
   />
 ```
 
-从提示信息 You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. 看。  
+从下面的提示信息看
+```
+You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field.
+```  
 我的理解是：设置了 checked 属性，但是又没有提供 onChange 事件来更新它，那么，将会自动为其设置一个 read-only 属性。  
 将上面的代码，去掉 className 属性，如下：
 ```
@@ -227,7 +230,10 @@ If the field should be mutable use `defaultChecked`. Otherwise, set either `onCh
   />
 ```
 再看界面，这时候，一个可以看到是否选中状态的复选框出现了，它确实是只读的，点击没有反应，当所有待办事项变成完成状态时，该 checkbox 会被设置为选中状态，否则为非选中状态。  
-再看后面的提示 If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`  
+再看后面的提示：
+```
+If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly` 
+``` 
 我的理解是：如果该 checkbox 是可变的，那么，请为其设置一个默认值，否则，要么设置 onChange 事件，要么设置 readOnly 属性。  
 设置默认值，例如设置默认选中，可以这样：
 ```
