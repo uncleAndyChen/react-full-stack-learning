@@ -171,7 +171,6 @@ More info: https://fb.me/react-controlled-components
 ```
 
 ### a 标签的 href 属性只是 `#` 会引发的警告
-项目中用到的 Link 组件 `./src/filter/views/link.js` 也有同样的警告，一起修改。
 ```
 ./src/todos/views/todoItem.js
   Line 13:  The href attribute requires a valid value to be accessible. 
@@ -180,6 +179,13 @@ More info: https://fb.me/react-controlled-components
   use a button and change it with appropriate styles. 
   Learn more: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md  
   jsx-a11y/anchor-is-valid
+```
+
+项目中用到的 Link 组件 `./src/filter/views/link.js` 也有同样的警告，一起修改。
+```
+./src/filter/views/link.js
+  Line 11:  The href attribute requires a valid value to be accessible.
+  ...
 ```
 
 #### 解决
@@ -197,7 +203,7 @@ More info: https://fb.me/react-controlled-components
 
 将 link.js 组件中的 a 标签也换成 button，这里就不贴代码了，直接[看代码文件](../src/filter/views/link.js)吧。
 
-最后还有一个警告，在点击【添加】按钮的时候触发的，没再深入研究。
+最后还有一个警告，在点击【添加】按钮的时候触发的，不过 chrome 浏览器才有该警告，QQ 浏览器没有，没再深入研究。
 ```
 [Deprecation] Using unescaped '#' characters in a data URI body is deprecated and will be removed in M71, around December 2018. 
 Please use '%23' instead. See https://www.chromestatus.com/features/5656049583390720 for more details.
