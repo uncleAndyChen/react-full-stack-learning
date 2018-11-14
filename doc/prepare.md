@@ -66,6 +66,17 @@
 1. 有些变量不在 state上，你又想达到这个变量更新的时候，重新渲染。
 1. state 里的某个变量层次太深，更新的时候没有自动触发 render()。
 
+# export, export default 和 import 区别以及用法
+这是ES6的语法。ES6 模块主要有两个功能：export 和 import
+    * export 用于对外输出本模块（一个文件可以理解为一个模块）变量、函数、模块的接口。
+    * import 用于在一个模块中加载另一个含有 export 接口的变量、函数、模块。
+
+## 区别及用法
+1. export 与 export default 均可用于导出常量、函数、文件、模块等。
+1. 你可以在其它文件或模块中通过import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用。
+1. 在一个文件或模块中，export、import可以有多个，export default仅有一个。
+1. 通过 export 方式导出，在导入时要加 {}，export default 则不需要。
+
 # 扩展阅读
 1. [react 中文社区文档](https://react.docschina.org/docs/hello-world.html)
 1. [Create React App official website,Getting Started](https://facebook.github.io/create-react-app/docs/getting-started)
