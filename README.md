@@ -20,8 +20,8 @@
 * github.com -> [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
 
 # 项目地址
-[gitee](https://gitee.com/elsafly/react-and-redux-demo)
-[github](https://github.com/uncleAndyChen/react-and-redux-demo)
+* [gitee](https://gitee.com/elsafly/react-and-redux-demo)
+* [github](https://github.com/uncleAndyChen/react-and-redux-demo)
 
 # 个人整理的相关知识点文档
 1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
