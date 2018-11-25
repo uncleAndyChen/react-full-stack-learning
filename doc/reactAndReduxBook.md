@@ -27,7 +27,7 @@ import PropTypes from 'prop-types';
 1. 父组件通过 props 向子组件传递数据。
 
 ## 分支 controlpanel_with_summary
-[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel_with_summary)
+[查看分支](../../../tree/controlpanel_with_summary)
 
 ## 知识点
 1. 组件的 props，父组件向子组件传递数据，包括传递函数。
@@ -35,7 +35,7 @@ import PropTypes from 'prop-types';
 
 # 第三章
 ## 分支 react-redux
-[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/react-redux)
+[查看分支](../../../tree/react-redux)
 
 到项目根目录，添加 redux 和 react-redux 依赖。  
 以下操作会添加最新版的 redux（截止 2018-11-06，版本为：4.0.1） 和 react-redux（截止 2018-11-06，版本为：5.1.0）
@@ -62,7 +62,7 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
 
 # 第四章
 ## 分支 todo_controlled_component
-[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/todo_controlled_component)
+[查看分支](../../../tree/todo_controlled_component)
 
 ## 知识点
 ### 代码文件组织结构，以及确定模块的边界。
