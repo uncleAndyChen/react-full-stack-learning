@@ -32,8 +32,6 @@ git pull
 
 # 第二章
 ## 分支 controlpanel
-[查看分支：controlpanel](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel)
-
 ### 知识点
 1. 组件。
 1. 组件的 state、props。
@@ -48,8 +46,6 @@ react 的类型检查 PropTypes 自 React v15.5 起已弃用，请使用 prop-ty
 扩展阅读：[使用 PropTypes 进行类型检查](https://react.docschina.org/docs/typechecking-with-proptypes.html)
 
 ## 分支 controlpanel_with_summary
-[查看分支：controlpanel_with_summary](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel_with_summary)
-
 ### 知识点
 1. 组件的 props，父组件向子组件传递数据，包括传递函数。
 1. 子组件通过调用父组件的函数，来达到向父组件传递数据的目的。
