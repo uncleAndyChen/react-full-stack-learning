@@ -1,4 +1,4 @@
-# react 全家桶技术栈学习
+# react 技术栈（全家桶）学习
 * 本项目分享个人学习 react 全家桶技术栈的一些经验心得。
 * 学习过程会结合相关示例代码，在实践中学习更有成效。
 * 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
@@ -14,12 +14,12 @@
     * react-redux v5.1.0
 
 # 项目地址
-* [托管在 gitee 上的项目链接](https://gitee.com/uncleAndyChen/react-full-stack-learning)
-* [托管在 github 上的项目链接](https://github.com/uncleAndyChen/react-full-stack-learning)
+* 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/react-full-stack-learning
+* 托管在 github 上的项目链接：https://github.com/uncleAndyChen/react-full-stack-learning
 
 # 个人整理的相关知识点文档
-1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
-1. [js 知识点、参考链接](./doc/js.md)
+1. [相关知识储备](./doc/prepare.md)
+1. [js 知识点](./doc/js.md)
 1. [redux 知识点](./doc/redux.md)
 1. [React 项目调试技巧](./doc/debug.md)
 1. [堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试代码](./doc/JetBrainsIDESupport.md)

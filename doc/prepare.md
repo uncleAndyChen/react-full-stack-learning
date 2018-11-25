@@ -1,4 +1,5 @@
-# 准备工作
+# react 技术栈学习，相关知识储备
+# node 与 cnpm 安装
 * 安装 node 最新版，[点击进入下载页面](https://nodejs.org/zh-cn/)。建议下载【长期维护版本】，而不是【含实验性的最新发布版】。
 * 安装 cnpm，参考官网：[淘宝 NPM 镜像](https://npm.taobao.org/)
     > 最直接的方式：`npm install -g cnpm --registry=https://registry.npm.taobao.org`
@@ -14,7 +15,7 @@
     * 是否将来有可能需要多处使用？
     * 是否可以提取到公用模块库？
 
-## JSX
+# JSX
 * JSX 描述 DOM 时，所有属性都采用小驼峰写法。
 * JSX 中用 {} 来写 JS 语句。
 * 元素内嵌样式使用对象来描述，样式属性名同样使用小驼峰写法，如 backgroundColor 。
