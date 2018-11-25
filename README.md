@@ -18,7 +18,7 @@ npx create-react-app react-and-redux-demo
 子目录名即为分支名，如第四章代码目录下的子目录：`todo_controlled_component`，会有一个对应分支也叫 `todo_controlled_component`。
 
 # 第一章
-分支：[controlpanel](https://gitee.com/elsafly/react-and-redux-demo/controlpanel)
+分支：[controlpanel](../../../tree/controlpanel)
 
 该示例为计数器，其中 PropTypes 的依赖有变化，需要做调整。  
 react 的类型检查 PropTypes 自 React v15.5 起已弃用，请使用 prop-types。  
