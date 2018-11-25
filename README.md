@@ -14,8 +14,8 @@
     * react-redux v5.1.0
 
 # 项目地址
-* 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/react-full-stack-learning
 * 托管在 github 上的项目链接：https://github.com/uncleAndyChen/react-full-stack-learning
+* 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/react-full-stack-learning
 
 # 个人整理的相关知识点文档
 1. [相关知识储备](./doc/prepare.md)
@@ -42,6 +42,6 @@ git pull
 
 # 如何参与项目，如何提交 PR？
 以下是两大平台的帮助文档。
-* gitee.com  -> [Fork + Pull 模式 ](https://gitee.com/help/articles/4128)
 * github.com -> [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
+* gitee.com  -> [Fork + Pull 模式 ](https://gitee.com/help/articles/4128)
 

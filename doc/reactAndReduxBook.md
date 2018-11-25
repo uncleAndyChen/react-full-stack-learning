@@ -2,6 +2,10 @@
 针对《深入浅出React和Redux》一书中，某一个被挑选的例子，完成之后，会创建一个相应的分支。  
 
 1. [《深入浅出React和Redux》原书例子代码，传送门](https://github.com/mocheng/react-and-redux)
+1. **在原书代码的基础上，把相关依赖升级到当前最新版（截止 2018-11-06）。**
+    * react v16.6.0
+    * redux v4.0.1
+    * react-redux v5.1.0
 1. 第一章代码位于 chapter-01，第二章的代码位于  chapter-02，依次类推。
 1. 子目录名即为分支名，如第四章代码目录下的子目录：`todo_controlled_component`，会有一个对应分支也叫 `todo_controlled_component`。
 
@@ -18,17 +22,35 @@ import PropTypes from 'prop-types';
 扩展阅读：[使用 PropTypes 进行类型检查](https://react.docschina.org/docs/typechecking-with-proptypes.html)
 
 # 第二章，分支 controlpanel
+```
+# 切换至该分支
+git checkout controlpanel
+git pull
+```
+
 ## 知识点
 1. 组件。
 1. 组件的 state、props。
 1. 父组件通过 props 向子组件传递数据。
 
 # 第二章，分支 controlpanel_with_summary
+```
+# 切换至该分支
+git checkout controlpanel_with_summary
+git pull
+```
+
 ## 知识点
 1. 组件的 props，父组件向子组件传递数据，包括传递函数。
 1. 子组件通过调用父组件的函数，来达到向父组件传递数据的目的。
 
 # 第三章，分支 react-redux
+```
+# 切换至该分支
+git checkout react-redux
+git pull
+```
+
 到项目根目录，添加 redux 和 react-redux 依赖。  
 以下操作会添加最新版的 redux（截止 2018-11-06，版本为：4.0.1） 和 react-redux（截止 2018-11-06，版本为：5.1.0）
 ```
@@ -53,6 +75,12 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
 相关知识点，已经总结到文档：[redux 知识点、参考链接](./doc/redux.md)
 
 # 第四章，分支 todo_controlled_component
+```
+# 切换至该分支
+git checkout todo_controlled_component
+git pull
+```
+
 ## 知识点
 ### 代码文件组织结构，以及确定模块的边界。
 参考《深入浅出React和Redux》P75-81。
