@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 
 # 第二章
 ## 分支 controlpanel
-[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel)
+[查看分支](./tree/controlpanel)
 
 ## 知识点
 1. 组件。
