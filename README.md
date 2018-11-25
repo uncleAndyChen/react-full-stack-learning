@@ -22,7 +22,7 @@
 1. [js 知识点](./doc/js.md)
 1. [redux 知识点](./doc/redux.md)
 1. [React 项目调试技巧](./doc/debug.md)
-1. [堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试代码](./doc/JetBrainsIDESupport.md)
+1. [堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试 react 代码](./doc/JetBrainsIDESupport.md)
 1. [redux 官方示例 todomvc 中的 todoList 过滤事件解析](./doc/examplesTodomvcGetVisibleTodos.md)
 1. [redux 官方示例 todomvc 两个警告修复](./doc/examplesTodomvcWarningsFixed.md)
         
