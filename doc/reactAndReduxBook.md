@@ -1,4 +1,4 @@
-# 《深入浅出React和Redux》例子演练
+# 《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点
 针对《深入浅出React和Redux》一书中，某一个被挑选的例子，完成之后，会创建一个相应的分支。  
 
 1. [《深入浅出React和Redux》原书例子代码，传送门](https://github.com/mocheng/react-and-redux)
