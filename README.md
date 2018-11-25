@@ -1,14 +1,23 @@
-# react 练习项目
-使用 react 16.6.0（截止 2018-11-05 的最新版）。      
-用 Create React App 初始化项目：  
-```
-npx create-react-app react-and-redux-demo
-```
-然后以《深入浅出React和Redux》这本书中的例子代码为基础，实际操作和演练。
-《深入浅出React和Redux》，第三章，《从Flux 到Redux》，如果你不了解、也没有用过 Flux，建议跳过 3.1，直接看 3.2。
+# react 全家桶技术栈学习
+* 本项目分享个人学习 react 全家桶技术栈的一些经验心得。
+* 学习过程会结合相关示例代码，在实践中学习更有成效。
+* 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
 
-# 文档
-以下是个人整理的相关文档。
+## 项目依赖及版本
+* 用 Create React App 初始化项目
+    ```
+    npx create-react-app react-and-redux-demo
+    ```
+* 相关依赖均使用当前最新版（截止 2018-11-06 的最新版）。
+    * react v16.6.0
+    * redux v4.0.1
+    * react-redux v5.1.0
+
+# 项目地址
+* [gitee](https://gitee.com/uncleAndyChen/react-full-stack-learning)
+* [github](https://github.com/uncleAndyChen/react-full-stack-learning)
+
+# 个人整理的相关知识点文档
 1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
 1. [js 知识点、参考链接](./doc/js.md)
 1. [redux 文档](./doc/redux.md)
@@ -29,7 +38,7 @@ git checkout branchName
 git pull
 ```
 
-# 例子代码
+# 结合《深入浅出React和Redux》例子代码学习
 第一章代码位于 chapter-01，第二章的代码位于  chapter-02，依次类推。  
 子目录名即为分支名，如第四章代码目录下的子目录：`todo_controlled_component`，会有一个对应分支也叫 `todo_controlled_component`。
 
@@ -47,24 +56,18 @@ import PropTypes from 'prop-types';
 
 # 第二章
 ## 分支 controlpanel
-[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel)
-
 ### 知识点
 1. 组件。
 1. 组件的 state、props。
 1. 父组件通过 props 向子组件传递数据。
 
 ## 分支 controlpanel_with_summary
-[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/controlpanel_with_summary)
-
 ### 知识点
 1. 组件的 props，父组件向子组件传递数据，包括传递函数。
 1. 子组件通过调用父组件的函数，来达到向父组件传递数据的目的。
 
 # 第三章
 ## 分支 react-redux
-[查看分支](https://gitee.com/elsafly/react-and-redux-demo/tree/react-redux)
-
 到项目根目录，添加 redux 和 react-redux 依赖。  
 以下操作会添加最新版的 redux（截止 2018-11-06，版本为：4.0.1） 和 react-redux（截止 2018-11-06，版本为：5.1.0）
 ```
