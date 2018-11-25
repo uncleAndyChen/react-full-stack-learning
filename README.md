@@ -26,8 +26,8 @@
 1. [redux 官方示例 todomvc 中的 todoList 过滤事件解析](./doc/examplesTodomvcGetVisibleTodos.md)
 1. [redux 官方示例 todomvc 两个警告修复](./doc/examplesTodomvcWarningsFixed.md)
         
-# 结合《深入浅出React和Redux》例子代码学习
- [文档传送门](./doc/reactAndReduxBook.md)
+# 结合例子代码学习
+[《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md)
 
 # 分支说明
 用 Create React App 初始化项目，所有练习代码都会体现到 master 分支。  
