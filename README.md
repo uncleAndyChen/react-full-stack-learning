@@ -14,8 +14,8 @@
     * react-redux v5.1.0
 
 # 项目地址
-* [gitee](https://gitee.com/uncleAndyChen/react-full-stack-learning)
-* [github](https://github.com/uncleAndyChen/react-full-stack-learning)
+* [托管在 gitee 上的项目链接](https://gitee.com/uncleAndyChen/react-full-stack-learning)
+* [托管在 github 上的项目链接](https://github.com/uncleAndyChen/react-full-stack-learning)
 
 # 个人整理的相关知识点文档
 1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
