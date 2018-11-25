@@ -1,12 +1,23 @@
-# react 练习项目
-使用 react 16.6.0（截止 2018-11-05 的最新版）。      
-用 Create React App 初始化项目：  
-```
-npx create-react-app react-and-redux-demo
-```
-然后以《深入浅出React和Redux》这本书中的例子代码为基础，实际操作和演练。
+# react 全家桶技术栈学习
+* 本项目分享个人学习 react 全家桶技术栈的一些经验心得。
+* 学习过程会结合相关示例代码，在实践中学习更有成效。
+* 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
 
-# 相关文档
+## 项目依赖及版本
+* 用 Create React App 初始化项目
+    ```
+    npx create-react-app react-and-redux-demo
+    ```
+* 相关依赖均使用当前最新版（截止 2018-11-06 的最新版）。
+    * react v16.6.0
+    * redux v4.0.1
+    * react-redux v5.1.0
+
+# 项目地址
+* [gitee](https://gitee.com/uncleAndyChen/react-full-stack-learning)
+* [github](https://github.com/uncleAndyChen/react-full-stack-learning)
+
+# 个人整理的相关知识点文档
 1. [开发前的准备工作、相关知识储备](./doc/prepare.md)
 1. [js 知识点、参考链接](./doc/js.md)
 
