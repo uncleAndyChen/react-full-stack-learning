@@ -48,6 +48,6 @@ git pull
 # 加群一起学习
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bdff785e1413e413a8f88187c9807306893951282103fad3b3080f05e829bd7b">
 <img border="0" src="./doc/images/qqGroup.png" alt="react stack(react全家桶)" title="react stack(react全家桶)">
-</a> （QQ 群号：683414457，进群密码：react stack）
+</a> （QQ 群号：683414457，进群密码：`react stack`）
 
 ![](./doc/images/reactStackLearning.png)
