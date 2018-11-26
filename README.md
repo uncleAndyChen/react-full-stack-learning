@@ -51,4 +51,5 @@ git pull
 </a> 
 
 （QQ 群号：683414457，进群密码：`react stack`）
+
 ![](./doc/images/reactStackLearning.png)
