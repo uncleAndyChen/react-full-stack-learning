@@ -46,8 +46,8 @@ git pull
 * gitee.com  -> [Fork + Pull 模式 ](https://gitee.com/help/articles/4128)
 
 # 加群一起学习
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bdff785e1413e413a8f88187c9807306893951282103fad3b3080f05e829bd7b"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="react stack(react全家桶)" title="react stack(react全家桶)"></a>
-
-QQ 群号：683414457
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bdff785e1413e413a8f88187c9807306893951282103fad3b3080f05e829bd7b">
+<img border="0" src="./doc/images/qqGroup.png" alt="react stack(react全家桶)" title="react stack(react全家桶)">
+</a> （QQ 群号：683414457）
 
 ![](./doc/images/reactStackLearning.png)
