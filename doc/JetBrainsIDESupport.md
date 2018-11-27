@@ -1,8 +1,10 @@
-# 堪比 Java 代码调试的方案：用 WebStorm + JetBrains IDE Support 插件，在 WebStorm 内调试 react 代码
+# 像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码
+WebStorm + Google Chrome + JetBrains IDE Support 插件
+
 ## 准备工作
-WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是这样），所以，JetBrains IDE Support 插件需要安装到 chrome 上。
+WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是这样），所以，JetBrains IDE Support 插件需要安装到  Google chrome 上。
 1. [chrome 最新版下载](http://chromecj.com/category/chrome/)
-1. 安装插件，在应用中心，搜索：JetBrains IDE Support，不过，如果谷歌应用中心，由于众所周知的原因不能访问的话，可以下载离线版进行安装。
+1. 安装插件，在应用中心，搜索：JetBrains IDE Support，不过，由于众所周知的原因，如果你不能访问谷歌应用中心的话，可以下载离线版进行安装。
     * [安装包下载](./JetBrains-IDE-Support-2.0.9-Crx4.crx)
     * 下载之后，先开启 chrome 的开发者模式（详情请见<a href="#chromePluginInstall">chrome 安装插件遇到的问题</a>），重启 chrome，再将文件直接拖至 chrome 的扩展页面，按照提示安装即可。  
     ![](./images/WebStormDebugReact04.png)
@@ -38,4 +40,3 @@ WebStorm 的 Javascript Debug 只能选择 chrome（至少在我的电脑上是�
 开启开发者模式之后，重启浏览器，重新安装，就一切正常了。看来开启开发都模式之后，需要重启浏览器才会生效。  
 ![](./images/WebStormDebugReact13.png)  
 ![](./images/WebStormDebugReact14.png)
-
