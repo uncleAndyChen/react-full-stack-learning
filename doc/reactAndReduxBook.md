@@ -72,7 +72,7 @@ peerDependencies WARNING react-redux@* requires a peer of redux@^2.0.0 || ^3.0.0
     * mapStateToProps
     * mapDispatchToProps
 
-相关知识点，已经总结到文档：[redux 知识点、参考链接](./doc/redux.md)
+相关知识点，已经总结到文档：[React 技术栈学习，redux 知识点](./redux.md)
 
 # 第四章，分支 todo_controlled_component
 ```
