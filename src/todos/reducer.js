@@ -1,6 +1,19 @@
 import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO}from './actionTypes.js';
 
-export default (state = [], action) => {
+const initialState = [
+    {
+        text: 'first todo item',
+        completed: false,
+        id: 0
+    },
+    {
+        text: 'welcome to react and redux learning',
+        completed: false,
+        id: 1
+    }
+];
+
+export default (state = initialState, action) => {
   switch(action.type) {
     case ADD_TODO: {
       return [
