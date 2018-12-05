@@ -3,15 +3,24 @@
 * 学习过程会结合相关示例代码，在实践中学习更有成效。
 * 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
 
+# 当前 master 示例
+《React进阶之路》第九章的bbs示例：[bbs-redux-reselect](https://github.com/xuchaobei/react-book/tree/master/chapter-09/bbs-redux-reselect)
+
+# 计划
+- [ ] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。
+
 ## 项目依赖及版本
 * 用 Create React App 初始化项目
     ```
     npx create-react-app react-and-redux-demo
     ```
-* 相关依赖均使用当前最新版（截止 2018-11-06 的最新版）。
-    * react v16.6.0
+* 相关依赖均使用当前最新版（截止 2018-12-05 的最新版）。
+    * react v16.6.3
     * redux v4.0.1
-    * react-redux v5.1.0
+    * react-redux v5.1.1
+    * react-router-dom v4.3.1
+    * reselect v4.0.0
+    * redux-thunk v2.3.0
 
 # 项目地址
 * 托管在 github 上的项目链接：https://github.com/uncleAndyChen/react-full-stack-learning
