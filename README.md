@@ -6,6 +6,12 @@
 # 当前 master 示例
 《React进阶之路》第九章的bbs示例：[bbs-redux-reselect](https://github.com/xuchaobei/react-book/tree/master/chapter-09/bbs-redux-reselect)
 
+- 该bbs内置三个用户
+    - tom
+    - jack
+    - steve
+- 密码都是：123456
+
 # 计划
 - [ ] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。
 
@@ -14,7 +20,7 @@
     ```
     npx create-react-app react-and-redux-demo
     ```
-* 相关依赖均使用当前最新版（截止 2018-12-05 的最新版）。
+* 相关依赖均使用当前最新版（截止 2018-12-05）。
     * react v16.6.3
     * redux v4.0.1
     * react-redux v5.1.1
@@ -34,7 +40,9 @@
 1. [像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码](./doc/JetBrainsIDESupport.md)
 1. [redux 官方示例 todomvc 中的 todoList 过滤事件解析](./doc/examplesTodomvcGetVisibleTodos.md)
 1. [redux 官方示例 todomvc 两个警告修复](./doc/examplesTodomvcWarningsFixed.md)
-        
+1. [React+Redux工程目录结构，最佳实践](https://www.lovesofttech.com/react/reactReduxDirectoryStructure)
+1. [react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除](https://www.lovesofttech.com/react/reactPropTypes)
+
 # 结合例子代码学习
 [《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md)
 
