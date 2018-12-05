@@ -32,19 +32,21 @@
 * 托管在 github 上的项目链接：https://github.com/uncleAndyChen/react-full-stack-learning
 * 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/react-full-stack-learning
 
-# 个人整理的相关知识点文档
-1. <a href="./doc/prepare.md" target="_blank">相关知识储备</a>
-1. <a href="./doc/js.md" target="_blank">js 知识点</a>
-1. <a href="./doc/redux.md" target="_blank">redux 知识点</a>
-1. <a href="./doc/debug.md" target="_blank">React 项目调试技巧</a>
-1. <a href="./doc/JetBrainsIDESupport.md" target="_blank">像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码</a>
-1. <a href="./doc/examplesTodomvcGetVisibleTodos.md" target="_blank">redux 官方示例 todomvc 中的 todoList 过滤事件解析</a>
-1. <a href="./doc/examplesTodomvcWarningsFixed.md" target="_blank">redux 官方示例 todomvc 两个警告修复</a>
-1. <a href="https://www.lovesofttech.com/react/reactReduxDirectoryStructure" target="_blank">React+Redux工程目录结构，最佳实践</a>
-1. <a href="https://www.lovesofttech.com/react/reactPropTypes" target="_blank">react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除</a>
+# 相关文档
+> 友情提示：如果要**在新窗口中打开**以下链接，请按住 Ctrl 键再点相关链接。
+
+1. [相关知识储备](./doc/prepare.md)
+1. [js 知识点](./doc/js.md)
+1. [redux 知识点](./doc/redux.md)
+1. [React 项目调试技巧](./doc/debug.md)
+1. [像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码](./doc/JetBrainsIDESupport.md)
+1. [redux 官方示例 todomvc 中的 todoList 过滤事件解析](./doc/examplesTodomvcGetVisibleTodos.md)
+1. [redux 官方示例 todomvc 两个警告修复](./doc/examplesTodomvcWarningsFixed.md)
+1. [React+Redux工程目录结构，最佳实践](https://www.lovesofttech.com/react/reactReduxDirectoryStructure)
+1. [react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除](https://www.lovesofttech.com/react/reactPropTypes)
 
 # 结合例子代码学习
-[《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md?_blank)
+[《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md)
 
 # 分支说明
 用 Create React App 初始化项目，所有练习代码都会体现到 master 分支。  
