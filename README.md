@@ -33,15 +33,15 @@
 * 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/react-full-stack-learning
 
 # 个人整理的相关知识点文档
-1. [相关知识储备](./doc/prepare.md?_blank)
-1. [js 知识点](./doc/js.md?_blank)
-1. [redux 知识点](./doc/redux.md?_blank)
-1. [React 项目调试技巧](./doc/debug.md?_blank)
-1. [像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码](./doc/JetBrainsIDESupport.md?_blank)
-1. [redux 官方示例 todomvc 中的 todoList 过滤事件解析](./doc/examplesTodomvcGetVisibleTodos.md?_blank)
-1. [redux 官方示例 todomvc 两个警告修复](./doc/examplesTodomvcWarningsFixed.md?_blank)
-1. [React+Redux工程目录结构，最佳实践](https://www.lovesofttech.com/react/reactReduxDirectoryStructure?_blank)
-1. [react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除](https://www.lovesofttech.com/react/reactPropTypes?_blank)
+1. <a href="./doc/prepare.md" target="_blank">相关知识储备</a>
+1. <a href="./doc/js.md" target="_blank">js 知识点</a>
+1. <a href="./doc/redux.md" target="_blank">redux 知识点</a>
+1. <a href="./doc/debug.md" target="_blank">React 项目调试技巧</a>
+1. <a href="./doc/JetBrainsIDESupport.md" target="_blank">像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码</a>
+1. <a href="./doc/examplesTodomvcGetVisibleTodos.md" target="_blank">redux 官方示例 todomvc 中的 todoList 过滤事件解析</a>
+1. <a href="./doc/examplesTodomvcWarningsFixed.md" target="_blank">redux 官方示例 todomvc 两个警告修复</a>
+1. <a href="https://www.lovesofttech.com/react/reactReduxDirectoryStructure" target="_blank">React+Redux工程目录结构，最佳实践</a>
+1. <a href="https://www.lovesofttech.com/react/reactPropTypes" target="_blank">react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除</a>
 
 # 结合例子代码学习
 [《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md?_blank)
