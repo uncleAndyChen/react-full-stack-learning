@@ -25,6 +25,7 @@ export const getPostListWithAuthors = createSelector(
   (allIds, posts, users) => {
     return allIds.map(id => {
       let post = posts.get(id);
+      // 将获取到的用户信息 merge 到 post 对象
       return post.merge({ author: users.get(post.get("author")) });
     });
   }

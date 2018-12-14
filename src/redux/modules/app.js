@@ -1,16 +1,16 @@
 import Immutable from "immutable";
 
 const initialState = Immutable.fromJS({
-  requestQuantity: 0,
-  error: null
+  requestQuantity: 0, // 当前应用中正在进行的 API 请求数
+  error: null         // 应用全局错误信息
 });
 
 // action types
 export const types = {
-  START_REQUEST: "APP/START_REQUEST",
-  FINISH_REQUEST: "APP/FINISH_REQUEST",
-  SET_ERROR: "APP/SET_ERROR",
-  REMOVE_ERROR: "APP/REMOVE_ERROR"
+  START_REQUEST: "APP/START_REQUEST",    // 开始发送请求
+  FINISH_REQUEST: "APP/FINISH_REQUEST",  // 请求结束
+  SET_ERROR: "APP/SET_ERROR",            // 设置错误信息
+  REMOVE_ERROR: "APP/REMOVE_ERROR"       // 删除错误信息
 };
 
 // action creators
@@ -34,8 +34,10 @@ export const actions = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.START_REQUEST:
+      // 开始发送请求 requestQuantity 加 1
       return state.merge({ requestQuantity: state.get("requestQuantity") + 1 });
     case types.FINISH_REQUEST:
+      // 请求结束 requestQuantity 减 1
       return state.merge({ requestQuantity: state.get("requestQuantity") - 1 });
     case types.SET_ERROR:
       return state.merge({ error: action.error });

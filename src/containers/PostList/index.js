@@ -48,12 +48,13 @@ class PostList extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    user: getLoggedUser(state),
-    posts: getPostListWithAuthors(state),
-    isAddDialogOpen: isAddDialogOpen(state)
+    user: getLoggedUser(state),             // 当前登录用户
+    posts: getPostListWithAuthors(state),   // 帖子列表数据
+    isAddDialogOpen: isAddDialogOpen(state) // 新建帖子编辑框的 UI 状态
   };
 };
 
+// bindActionCreators前，之所以有三个点儿，是因为要返回多个 actions，看 postActions、actions 的定义就知道了。
 const mapDispatchToProps = dispatch => {
   return {
     ...bindActionCreators(postActions, dispatch),

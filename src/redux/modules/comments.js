@@ -6,12 +6,13 @@ import { actions as appActions } from "./app";
 
 // action types
 export const types = {
-  FETCH_COMMENTS: "COMMENTS/FETCH_COMMENTS",
-  CREATE_COMMENT: "COMMENTS/CREATE_COMMENT"
+  FETCH_COMMENTS: "COMMENTS/FETCH_COMMENTS", // 获取评论列表
+  CREATE_COMMENT: "COMMENTS/CREATE_COMMENT"  // 创建评论
 };
 
 // action creators
 export const actions = {
+  // 获取评论列表
   fetchComments: postId => {
     return (dispatch, getState) => {
       if (shouldFetchComments(postId, getState())) {
@@ -28,6 +29,7 @@ export const actions = {
       }
     };
   },
+  // 创建评论
   createComment: comment => {
     return dispatch => {
       dispatch(appActions.startRequest());
@@ -43,6 +45,7 @@ export const actions = {
   }
 };
 
+// 获取评论列表成功
 const fetchCommentsSuccess = (postId, commentIds, comments, users) => ({
   type: types.FETCH_COMMENTS,
   postId,
@@ -51,6 +54,7 @@ const fetchCommentsSuccess = (postId, commentIds, comments, users) => ({
   users
 });
 
+// 创建评论成功
 const createCommentSuccess = (postId, comment) => ({
   type: types.CREATE_COMMENT,
   postId,

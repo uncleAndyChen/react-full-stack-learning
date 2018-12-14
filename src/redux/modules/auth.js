@@ -4,8 +4,8 @@ import url from "../../utils/url";
 import { actions as appActions } from "./app";
 
 const initialState = Immutable.fromJS({
-  userId: null,
-  username: null
+  userId: null,  // 当前登录用户的 id
+  username: null // 当前登录用户的用户名
 });
 
 // action types
