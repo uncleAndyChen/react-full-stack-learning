@@ -4,7 +4,7 @@
 * 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
 
 # 当前 master 示例
-《React进阶之路》第九章的bbs示例：[bbs-redux-reselect](https://github.com/xuchaobei/react-book/tree/master/chapter-09/bbs-redux-reselect)
+- [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
 - 该bbs内置三个用户
     - tom
@@ -46,7 +46,7 @@
 1. [react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除](https://www.lovesofttech.com/react/reactPropTypes)
 
 # 结合例子代码学习
-[《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md)
+- [《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md)
 
 # 分支说明
 用 Create React App 初始化项目，所有练习代码都会体现到 master 分支。  
