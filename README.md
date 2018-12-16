@@ -44,6 +44,9 @@
 1. [redux 官方示例 todomvc 两个警告修复](./doc/examplesTodomvcWarningsFixed.md)
 1. [React+Redux工程目录结构，最佳实践](https://www.lovesofttech.com/react/reactReduxDirectoryStructure)
 1. [react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除](https://www.lovesofttech.com/react/reactPropTypes)
+1. [WebStorm + React 项目，配置 ESLint](https://www.lovesofttech.com/react/eslintConfig)
+1. [ESLint 配置文件 .eslintrc 示例及解说](https://www.lovesofttech.com/react/eslintConfigFileExample)
+1. [react开发，日常经验汇总](https://www.lovesofttech.com/react/reactExperience)
 
 # 结合例子代码学习
 - [《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md)
