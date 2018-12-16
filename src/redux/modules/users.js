@@ -22,10 +22,6 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 
 // selectors
-export const getUserById = (state, id) => {
-  return state.getIn(["users", id]);
-};
+export const getUserById = (state, id) => state.getIn(["users", id]);
 
-export const getUsers = (state) => {
-  return state.get("users");
-};
+export const getUsers = state => state.get("users");
