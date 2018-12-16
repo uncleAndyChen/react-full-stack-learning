@@ -1,0 +1,30 @@
+env:
+  browser: true
+  commonjs: true
+  es6: true
+#extends: 'eslint:recommended'
+extends: airbnb
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2018
+  sourceType: module
+plugins:
+  - react
+rules:
+  # 缩进风格：这里设置的是用两个空格缩进。
+  # 至于要用几个空格来缩进，需要根据团队的编码规范来。
+  # 如果是研究别人的开源项目，建议根据开源项目的实际情况来设置。
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  linebreak-style:
+    - error
+    - windows
+  quotes:  # 引号：设置成双引号
+    - error
+    - double
+  semi:   # 分号：语句末尾需要有分号
+    - error
+    - always

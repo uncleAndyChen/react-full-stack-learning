@@ -4,40 +4,38 @@ import url from "../../utils/url";
 import { actions as appActions } from "./app";
 
 const initialState = Immutable.fromJS({
-  userId: null,  // 当前登录用户的 id
-  username: null // 当前登录用户的用户名
+  userId: null, // 当前登录用户的 id
+  username: null, // 当前登录用户的用户名
 });
 
 // action types
 export const types = {
   LOGIN: "AUTH/LOGIN",
-  LOGOUT: "AUTH/LOGOUT"
+  LOGOUT: "AUTH/LOGOUT",
 };
 
 // action creators
 export const actions = {
-  login: (username, password) => {
-    return dispatch => {
-      dispatch(appActions.startRequest());
-      const params = { username, password };
-      return post(url.login(), params).then(data => {
-        dispatch(appActions.finishRequest());
-        if (!data.error) {
-          dispatch(actions.setLoginInfo(data.userId, username));
-        } else {
-          dispatch(appActions.setError(data.error));
-        }
-      });
-    };
+  login: (username, password) => (dispatch) => {
+    dispatch(appActions.startRequest());
+    const params = { username, password };
+    return post(url.login(), params).then((data) => {
+      dispatch(appActions.finishRequest());
+      if (!data.error) {
+        dispatch(actions.setLoginInfo(data.userId, username));
+      } else {
+        dispatch(appActions.setError(data.error));
+      }
+    });
   },
   logout: () => ({
-    type: types.LOGOUT
+    type: types.LOGOUT,
   }),
   setLoginInfo: (userId, username) => ({
     type: types.LOGIN,
-    userId: userId,
-    username: username
-  })
+    userId,
+    username,
+  }),
 };
 
 // reducers
@@ -55,7 +53,4 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 
 // selectors
-export const getLoggedUser = state => {
-  return state.get("auth");
-};
-
+export const getLoggedUser = state => state.get("auth");
