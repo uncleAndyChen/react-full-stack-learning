@@ -49,6 +49,7 @@
 1. [react开发，日常经验汇总](https://www.lovesofttech.com/react/reactExperience)
 
 # 结合例子代码学习
+- [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 - [《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点](./doc/reactAndReduxBook.md)
 
 # 分支说明
