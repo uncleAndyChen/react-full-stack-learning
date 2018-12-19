@@ -13,7 +13,8 @@
 - 密码都是：123456
 
 # 计划
-- [ ] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。
+1. [ ] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。
+1. [ ] 用 [ant-design](https://github.com/ant-design/ant-design) 改造页面，同时添加分页功能。
 
 ## 项目依赖及版本
 * 用 Create React App 初始化项目
