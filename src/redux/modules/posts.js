@@ -19,10 +19,10 @@ export const actions = {
     return (dispatch, getState) => {
       if (shouldFetchAllPosts(getState())) {
         dispatch(appActions.startRequest());
-        return get(url.getPostList()).then(data => {
+        return post(url.getPostList(), url.getPostListRequest()).then(data => {
           dispatch(appActions.finishRequest());
-          if (!data.error) {
-            const { posts, postsIds, authors } = convertPostsToPlain(data);
+          if (data.code === 1) {
+            const { posts, postsIds, authors } = convertPostsToPlain(data.responseData);
             dispatch(fetchAllPostsSuccess(posts, postsIds, authors));
           } else {
             dispatch(appActions.setError(data.error));
@@ -132,7 +132,7 @@ const convertPostsToPlain = posts => {
   let postsIds = [];
   let authorsById = {};
   posts.forEach(item => {
-    postsById[item.id] = { ...item, author: item.author.id };
+    postsById[item.id] = { ...item, author: String(item.author.id) };
     postsIds.push(item.id);
     if (!authorsById[item.author.id]) {
       authorsById[item.author.id] = item.author;

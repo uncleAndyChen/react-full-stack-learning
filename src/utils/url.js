@@ -1,10 +1,7 @@
 // 获取帖子列表的过滤条件
-const postListFilter = {
-  fields: ["id", "title", "author", "vote", "updatedAt"],
-  limit: 5,
-  order: "updatedAt DESC",
-  include: "authorPointer",
-  includefilter: { user: { fields: ["id", "username"] } },
+const postListRequest = {
+  method: "getPostList",
+  jsonStringParameter: JSON.stringify({ recordsLimit: 5, orderBy: "updatedAt DESC" }),
 };
 
 // 获取帖子详情的过滤条件
@@ -32,15 +29,18 @@ function encodeFilter(filter) {
 export default {
   login: () => "/user/login",
   // 获取帖子列表
-  getPostList: () => `/post?filter=${encodeFilter(postListFilter)}`,
+  // getPostList: () => `/bbsApi?baseRequest=${encodeFilter(postListFilter)}`,
+  getPostList: () => "/bbsApi",
   // 获取帖子详情
-  getPostById: id => `/post?filter=${encodeFilter(postByIdFilter(id))}`,
+  getPostById: id => `/bbsApi?baseRequest=${encodeFilter(postByIdFilter(id))}`,
   // 新建帖子
-  createPost: () => "/post",
+  createPost: () => "/bbsApi",
   // 修改帖子
-  updatePost: id => `/post/${id}`,
+  updatePost: id => `/bbsApi/${id}`,
   // 获取评论列表
-  getCommentList: postId => `/comment?filter=${encodeFilter(commentListFilter(postId))}`,
+  getCommentList: postId => `/comment?baseRequest=${encodeFilter(commentListFilter(postId))}`,
   // 创建评论
   createComment: () => "/comment",
+
+  getPostListRequest: () => postListRequest,
 };
