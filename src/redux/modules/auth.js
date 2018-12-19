@@ -14,17 +14,23 @@ export const types = {
   LOGOUT: "AUTH/LOGOUT",
 };
 
+const userLoginRequest = (username, password) => (
+  {
+    method: "userLogin",
+    jsonStringParameter: JSON.stringify({ username, password }),
+  }
+);
+
 // action creators
 export const actions = {
   login: (username, password) => (dispatch) => {
     dispatch(appActions.startRequest());
-    const params = { username, password };
-    return post(url.login(), params).then((data) => {
+    return post(url.getApiUri(), userLoginRequest(username, password)).then((data) => {
       dispatch(appActions.finishRequest());
-      if (!data.error) {
-        dispatch(actions.setLoginInfo(data.userId, username));
+      if (data.code === 1) {
+        dispatch(actions.setLoginInfo(data.responseData.userId, username));
       } else {
-        dispatch(appActions.setError(data.error));
+        dispatch(appActions.setError(data.message));
       }
     });
   },

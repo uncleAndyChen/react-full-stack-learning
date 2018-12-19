@@ -1,48 +1,50 @@
 import Immutable from "immutable";
 import { combineReducers } from "redux-immutable";
-import { get, post } from "../../utils/request";
+import { post } from "../../utils/request";
 import url from "../../utils/url";
 import { actions as appActions } from "./app";
 
 // action types
 export const types = {
   FETCH_COMMENTS: "COMMENTS/FETCH_COMMENTS", // 获取评论列表
-  CREATE_COMMENT: "COMMENTS/CREATE_COMMENT"  // 创建评论
+  CREATE_COMMENT: "COMMENTS/CREATE_COMMENT", // 创建评论
 };
+
+// 获取评论列表的过滤条件
+const commentListRequest = postId => ({
+  method: "getCommentList",
+  jsonStringParameter: JSON.stringify({ whereFieldValue: postId, recordsLimit: 5, orderBy: "updatedAt DESC" }),
+});
 
 // action creators
 export const actions = {
   // 获取评论列表
-  fetchComments: postId => {
-    return (dispatch, getState) => {
-      if (shouldFetchComments(postId, getState())) {
-        dispatch(appActions.startRequest());
-        return get(url.getCommentList(postId)).then(data => {
-          dispatch(appActions.finishRequest());
-          if (!data.error) {
-            const { comments, commentIds, users } = convertToPlainStructure(data);
-            dispatch(fetchCommentsSuccess(postId, commentIds, comments, users));
-          } else {
-            dispatch(appActions.setError(data.error));
-          }
-        });
-      }
-    };
-  },
-  // 创建评论
-  createComment: comment => {
-    return dispatch => {
+  fetchComments: postId => (dispatch, getState) => {
+    if (shouldFetchComments(postId, getState())) {
       dispatch(appActions.startRequest());
-      return post(url.createComment(), comment).then(data => {
+      return post(url.getApiUri(), commentListRequest(postId)).then((data) => {
         dispatch(appActions.finishRequest());
-        if (!data.error) {
-          dispatch(createCommentSuccess(data.post, data));
+        if (data.code === 1) {
+          const { comments, commentIds, users } = convertToPlainStructure(data.responseData);
+          dispatch(fetchCommentsSuccess(postId, commentIds, comments, users));
         } else {
           dispatch(appActions.setError(data.error));
         }
       });
-    };
-  }
+    }
+  },
+  // 创建评论
+  createComment: commentRequest => (dispatch) => {
+    dispatch(appActions.startRequest());
+    return post(url.getApiUri(), commentRequest).then((data) => {
+      dispatch(appActions.finishRequest());
+      if (data.code === 1) {
+        dispatch(createCommentSuccess(data.responseData.postId, data.responseData));
+      } else {
+        dispatch(appActions.setError(data.message));
+      }
+    });
+  },
 };
 
 // 获取评论列表成功
@@ -51,14 +53,14 @@ const fetchCommentsSuccess = (postId, commentIds, comments, users) => ({
   postId,
   commentIds,
   comments,
-  users
+  users,
 });
 
 // 创建评论成功
 const createCommentSuccess = (postId, comment) => ({
   type: types.CREATE_COMMENT,
   postId,
-  comment
+  comment,
 });
 
 const shouldFetchComments = (postId, state) => {
@@ -66,21 +68,21 @@ const shouldFetchComments = (postId, state) => {
   return !commentIds;
 };
 
-const convertToPlainStructure = comments => {
-  let commentsById = {};
-  let commentIds = [];
-  let authorsById = {};
-  comments.forEach(item => {
-    commentsById[item.id] = { ...item, author: item.author.id };
+const convertToPlainStructure = (comments) => {
+  const commentsById = {};
+  const commentIds = [];
+  const authorsById = {};
+  comments.forEach((item) => {
+    commentsById[item.id] = { ...item, author: String(item.author.id) };
     commentIds.push(item.id);
-    if (!authorsById[item.author.id]) {
-      authorsById[item.author.id] = item.author;
+    if (!authorsById[String(item.author.id)]) {
+      authorsById[String(item.author.id)] = item.author;
     }
   });
   return {
     comments: commentsById,
     commentIds,
-    users: authorsById
+    users: authorsById,
   };
 };
 
@@ -92,7 +94,7 @@ const byPost = (state = Immutable.fromJS({}), action) => {
     case types.CREATE_COMMENT:
       return state.set(
         action.postId,
-        state.get(action.postId).unshift(action.comment.id)
+        state.get(action.postId).unshift(action.comment.id),
       );
     default:
       return state;
@@ -112,14 +114,12 @@ const byId = (state = Immutable.fromJS({}), action) => {
 
 const reducer = combineReducers({
   byPost,
-  byId
+  byId,
 });
 
 export default reducer;
 
 // selectors
-export const getCommentIdsByPost = (state, postId) =>
-  state.getIn(["comments", "byPost", postId]);
+export const getCommentIdsByPost = (state, postId) => state.getIn(["comments", "byPost", postId]);
 
 export const getComments = state => state.getIn(["comments", "byId"]);
-

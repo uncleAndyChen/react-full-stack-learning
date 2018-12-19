@@ -45,7 +45,7 @@ export const getCommentsWithAuthors = createSelector(
   (commentIds, comments, users) => {
     if (commentIds) {
       return commentIds.map(id => {
-        let comment = comments.get(id);
+        let comment = comments.get(String(id));
         return comment.merge({
           author: users.get(comment.get("author"))
         });

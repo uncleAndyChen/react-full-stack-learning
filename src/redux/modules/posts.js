@@ -1,6 +1,6 @@
 import Immutable from "immutable";
 import { combineReducers } from "redux-immutable";
-import { get, put, post } from "../../utils/request";
+import { put, post } from "../../utils/request";
 import url from "../../utils/url";
 import { actions as appActions } from "./app";
 
@@ -9,8 +9,20 @@ export const types = {
   CREATE_POST: "POSTS/CREATE_POST",
   UPDATE_POST: "POSTS/UPDATE_POST",
   FETCH_ALL_POSTS: "POSTS/FETCH_ALL_POSTS", // 获取帖子列表
-  FETCH_POST: "POSTS/FETCH_POST"            // 获取帖子详情
+  FETCH_POST: "POSTS/FETCH_POST", // 获取帖子详情
 };
+
+// 获取帖子列表的过滤条件
+const postListRequest = {
+  method: "getPostList",
+  jsonStringParameter: JSON.stringify({ recordsLimit: 5, orderBy: "updatedAt DESC" }),
+};
+
+// 获取帖子详情的过滤条件
+const postByIdRequest = id => ({
+  method: "getPostByPrimaryKey",
+  extendValue: id,
+});
 
 // action creators
 export const actions = {
@@ -19,13 +31,13 @@ export const actions = {
     return (dispatch, getState) => {
       if (shouldFetchAllPosts(getState())) {
         dispatch(appActions.startRequest());
-        return post(url.getPostList(), url.getPostListRequest()).then(data => {
+        return post(url.getApiUri(), postListRequest).then(data => {
           dispatch(appActions.finishRequest());
           if (data.code === 1) {
             const { posts, postsIds, authors } = convertPostsToPlain(data.responseData);
             dispatch(fetchAllPostsSuccess(posts, postsIds, authors));
           } else {
-            dispatch(appActions.setError(data.error));
+            dispatch(appActions.setError(data.message));
           }
         });
       }
@@ -36,13 +48,13 @@ export const actions = {
     return (dispatch, getState) => {
       if (shouldFetchPost(id, getState())) {
         dispatch(appActions.startRequest());
-        return get(url.getPostById(id)).then(data => {
+        return post(url.getApiUri(), postByIdRequest(id)).then(data => {
           dispatch(appActions.finishRequest());
-          if (!data.error && data.length === 1) {
-            const { post, author } = convertSinglePostToPlain(data[0]);
+          if (data.code === 1) {
+            const { post, author } = convertSinglePostToPlain(data.responseData);
             dispatch(fetchPostSuccess(post, author));
           } else {
-            dispatch(appActions.setError(data.error));
+            dispatch(appActions.setError(data.message));
           }
         });
       }
@@ -146,7 +158,7 @@ const convertPostsToPlain = posts => {
 };
 
 const convertSinglePostToPlain = post => {
-  const plainPost = { ...post, author: post.author.id };
+  const plainPost = { ...post, author: String(post.author.id) };
   const author = { ...post.author };
   return {
     post: plainPost,

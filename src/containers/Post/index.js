@@ -26,7 +26,7 @@ class Post extends Component {
   handlePostSave = (data) => {
     const id = this.props.match.params.id;
     this.props.updatePost(id, data);
-  }
+  };
 
   handlePostCancel = () => {
     this.props.closeEditDialog();
@@ -35,12 +35,12 @@ class Post extends Component {
   handleCommentSubmit = (content) => {
     const postId = this.props.match.params.id;
     const { user } = this.props;
-    const comment = {
-      author: user.get("userId"),
-      post: postId,
-      content: content
+    const commentRequest = {
+      userId: user.get("userId"),
+      postId,
+      content
     };
-    this.props.createComment(comment);
+    this.props.createComment(commentRequest);
   }
 
   render() {
