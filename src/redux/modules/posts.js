@@ -13,13 +13,13 @@ export const types = {
 };
 
 // 获取帖子列表的过滤条件
-const postListRequest = {
+const getPostListRequest = {
   method: "getPostList",
   jsonStringParameter: JSON.stringify({ recordsLimit: 5, orderBy: "updatedAt DESC" }),
 };
 
 // 获取帖子详情的过滤条件
-const postByIdRequest = id => ({
+const getPostByIdRequest = id => ({
   method: "getPostByPrimaryKey",
   extendValue: id,
 });
@@ -31,7 +31,7 @@ export const actions = {
     return (dispatch, getState) => {
       if (shouldFetchAllPosts(getState())) {
         dispatch(appActions.startRequest());
-        return post(url.getApiUri(), postListRequest).then(data => {
+        return post(url.getApiUri(), getPostListRequest).then(data => {
           dispatch(appActions.finishRequest());
           if (data.code === 1) {
             const { posts, postsIds, authors } = convertPostsToPlain(data.responseData);
@@ -48,7 +48,7 @@ export const actions = {
     return (dispatch, getState) => {
       if (shouldFetchPost(id, getState())) {
         dispatch(appActions.startRequest());
-        return post(url.getApiUri(), postByIdRequest(id)).then(data => {
+        return post(url.getApiUri(), getPostByIdRequest(id)).then(data => {
           dispatch(appActions.finishRequest());
           if (data.code === 1) {
             const { post, author } = convertSinglePostToPlain(data.responseData);

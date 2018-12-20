@@ -11,8 +11,13 @@ import { actions as uiActions, isEditDialogOpen } from "../../redux/modules/ui";
 import { getPostDetail, getCommentsWithAuthors } from "../../redux/modules";
 import "./style.css";
 
-class Post extends Component {
+// 创建评论请求数据
+const getCommentRequest = (postId, userId, content) => ({
+  method: "createComment",
+  jsonStringParameter: JSON.stringify({ postId, userId, content }),
+});
 
+class Post extends Component {
   componentDidMount() {
     const postId = this.props.match.params.id;
     this.props.fetchPost(postId);
@@ -21,7 +26,7 @@ class Post extends Component {
 
   handleEditClick = () => {
     this.props.openEditDialog();
-  }
+  };
 
   handlePostSave = (data) => {
     const id = this.props.match.params.id;
@@ -30,18 +35,14 @@ class Post extends Component {
 
   handlePostCancel = () => {
     this.props.closeEditDialog();
-  }
+  };
 
   handleCommentSubmit = (content) => {
     const postId = this.props.match.params.id;
     const { user } = this.props;
-    const commentRequest = {
-      userId: user.get("userId"),
-      postId,
-      content
-    };
+    const commentRequest = getCommentRequest(postId, user.get("userId"), content);
     this.props.createComment(commentRequest);
-  }
+  };
 
   render() {
     const { post, comments, user, isEditDialogOpen } = this.props;

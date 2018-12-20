@@ -11,7 +11,7 @@ export const types = {
 };
 
 // 获取评论列表的过滤条件
-const commentListRequest = postId => ({
+const getCommentListRequest = postId => ({
   method: "getCommentList",
   jsonStringParameter: JSON.stringify({ whereFieldValue: postId, recordsLimit: 5, orderBy: "updatedAt DESC" }),
 });
@@ -22,7 +22,7 @@ export const actions = {
   fetchComments: postId => (dispatch, getState) => {
     if (shouldFetchComments(postId, getState())) {
       dispatch(appActions.startRequest());
-      return post(url.getApiUri(), commentListRequest(postId)).then((data) => {
+      return post(url.getApiUri(), getCommentListRequest(postId)).then((data) => {
         dispatch(appActions.finishRequest());
         if (data.code === 1) {
           const { comments, commentIds, users } = convertToPlainStructure(data.responseData);
@@ -94,7 +94,7 @@ const byPost = (state = Immutable.fromJS({}), action) => {
     case types.CREATE_COMMENT:
       return state.set(
         action.postId,
-        state.get(action.postId).unshift(action.comment.id),
+        state.get(String(action.postId)).unshift(String(action.comment.id)),
       );
     default:
       return state;
@@ -106,7 +106,7 @@ const byId = (state = Immutable.fromJS({}), action) => {
     case types.FETCH_COMMENTS:
       return state.merge(action.comments);
     case types.CREATE_COMMENT:
-      return state.merge({ [action.comment.id]: action.comment });
+      return state.merge({ [String(action.comment.id)]: action.comment });
     default:
       return state;
   }
