@@ -13,6 +13,7 @@ export const types = {
 };
 
 // 获取帖子列表的过滤条件
+// mybatis 动态 order by 不生效，所以，排序规则直接写在 sql 语句里了，而不是通过参数，orderBy 参数可不传。
 const getPostListRequest = {
   method: "getPostList",
   jsonStringParameter: JSON.stringify({ recordsLimit: 5, orderBy: "updatedAt DESC" }),
