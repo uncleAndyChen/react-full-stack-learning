@@ -144,7 +144,7 @@ const convertPostsToPlain = posts => {
   let postsIds = [];
   let authorsById = {};
   posts.forEach(item => {
-    postsById[item.id] = { ...item, author: String(item.author.id) };
+    postsById[item.id] = { ...item, author: item.author.id };
     postsIds.push(item.id);
     if (!authorsById[item.author.id]) {
       authorsById[item.author.id] = item.author;
@@ -158,7 +158,7 @@ const convertPostsToPlain = posts => {
 };
 
 const convertSinglePostToPlain = post => {
-  const plainPost = { ...post, author: String(post.author.id) };
+  const plainPost = { ...post, author: post.author.id };
   const author = { ...post.author };
   return {
     post: plainPost,
@@ -170,6 +170,7 @@ const convertSinglePostToPlain = post => {
 const allIds = (state = Immutable.fromJS([]), action) => {
   switch (action.type) {
     case types.FETCH_ALL_POSTS:
+      // https://www.cnblogs.com/hxling/articles/8016443.html 合并列表
       return Immutable.List(action.postIds);
     case types.CREATE_POST:
       return state.unshift(action.post.id);

@@ -73,10 +73,10 @@ const convertToPlainStructure = (comments) => {
   const commentIds = [];
   const authorsById = {};
   comments.forEach((item) => {
-    commentsById[item.id] = { ...item, author: String(item.author.id) };
+    commentsById[item.id] = { ...item, author: item.author.id };
     commentIds.push(item.id);
-    if (!authorsById[String(item.author.id)]) {
-      authorsById[String(item.author.id)] = item.author;
+    if (!authorsById[item.author.id]) {
+      authorsById[item.author.id] = item.author;
     }
   });
   return {
@@ -94,7 +94,7 @@ const byPost = (state = Immutable.fromJS({}), action) => {
     case types.CREATE_COMMENT:
       return state.set(
         action.postId,
-        state.get(String(action.postId)).unshift(String(action.comment.id)),
+        state.get(action.postId).unshift(action.comment.id),
       );
     default:
       return state;
@@ -106,7 +106,7 @@ const byId = (state = Immutable.fromJS({}), action) => {
     case types.FETCH_COMMENTS:
       return state.merge(action.comments);
     case types.CREATE_COMMENT:
-      return state.merge({ [String(action.comment.id)]: action.comment });
+      return state.merge({ [action.comment.id]: action.comment });
     default:
       return state;
   }

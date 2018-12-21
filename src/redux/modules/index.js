@@ -24,7 +24,7 @@ export const getPostListWithAuthors = createSelector(
   [getPostIds, getPostList, getUsers],
   (allIds, posts, users) => {
     return allIds.map(id => {
-      let post = posts.get(String(id));
+      let post = posts.get(id);
       // 将获取到的用户信息 merge 到 post 对象
       return post.merge({ author: users.get(post.get("author")) });
     });
@@ -45,7 +45,7 @@ export const getCommentsWithAuthors = createSelector(
   (commentIds, comments, users) => {
     if (commentIds) {
       return commentIds.map(id => {
-        let comment = comments.get(String(id));
+        let comment = comments.get(id);
         return comment.merge({
           author: users.get(comment.get("author"))
         });

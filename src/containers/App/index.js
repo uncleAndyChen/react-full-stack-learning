@@ -20,7 +20,7 @@ class App extends Component {
     const { error, requestQuantity } = this.props;
     const errorDialog = error && (
       <ModalDialog onClose={this.props.removeError}>
-        {error.get("message") || error}
+        {error}
       </ModalDialog>
     );
 
