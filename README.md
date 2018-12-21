@@ -4,13 +4,19 @@
 * 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
 
 # master 分支
-与后端项目[spring-boot-bbs-api](https://github.com/uncleAndyChen/spring-boot-bbs-api)配合，取代 APICloud API 方式，代码改动量还是挺大的，不过，基本业务逻辑基本没有改。
+与后端项目配合，取代 APICloud API 方式。
 
-- 该bbs内置三个用户
+登录之后，才可以发帖和评论。
+- 后端项目的 sql 脚本初始化了四个用户
     - tom
     - jack
     - steve
+    - AndyChen
 - 密码都是：123456
+
+## 后端项目地址
+* 托管在 github 上的项目链接：https://github.com/uncleAndyChen/spring-boot-bbs-api
+* 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/spring-boot-bbs-api
 
 # bbs-apicloud 分支
 - 仅对《React进阶之路》第九章示例[bbs-redux-reselect](https://github.com/xuchaobei/react-book/tree/master/chapter-09/bbs-redux-reselect)添加一些备注，增加 ESLint检查，代码逻辑基本保留。
