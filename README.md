@@ -17,7 +17,7 @@
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
 # 计划
-1. [ ] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。
+1. [x] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。（[spring-boot-bbs-api](https://github.com/uncleAndyChen/spring-boot-bbs-api)）
 1. [ ] 用 [ant-design](https://github.com/ant-design/ant-design) 改造页面，同时添加分页功能。
 
 ## 项目依赖及版本
