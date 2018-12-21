@@ -1,6 +1,6 @@
 import Immutable from "immutable";
 import { combineReducers } from "redux-immutable";
-import { put, post } from "../../utils/request";
+import { post } from "../../utils/request";
 import url from "../../utils/url";
 import { actions as appActions } from "./app";
 
@@ -24,78 +24,82 @@ const getPostByIdRequest = id => ({
   extendValue: id,
 });
 
+// 创建帖子请求数据
+const getNewPostRequest = (userId, title, content) => ({
+  method: "insertPost",
+  jsonStringParameter: JSON.stringify({
+    userId, title, content,
+  }),
+});
+
+// 修改帖子请求数据
+const getUpdatePostRequest = (postId, title, content) => ({
+  method: "updatePost",
+  jsonStringParameter: JSON.stringify({
+    postId, title, content,
+  }),
+});
+
 // action creators
 export const actions = {
   // 获取帖子列表
-  fetchAllPosts: () => {
-    return (dispatch, getState) => {
-      if (shouldFetchAllPosts(getState())) {
-        dispatch(appActions.startRequest());
-        return post(url.getApiUri(), getPostListRequest).then(data => {
-          dispatch(appActions.finishRequest());
-          if (data.code === 1) {
-            const { posts, postsIds, authors } = convertPostsToPlain(data.responseData);
-            dispatch(fetchAllPostsSuccess(posts, postsIds, authors));
-          } else {
-            dispatch(appActions.setError(data.message));
-          }
-        });
-      }
-    };
+  fetchAllPosts: () => (dispatch, getState) => {
+    if (shouldFetchAllPosts(getState())) {
+      dispatch(appActions.startRequest());
+      return post(url.getApiUri(), getPostListRequest).then((data) => {
+        dispatch(appActions.finishRequest());
+        if (data.code === 1) {
+          const { posts, postsIds, authors } = convertPostsToPlain(data.responseData);
+          dispatch(fetchAllPostsSuccess(posts, postsIds, authors));
+        } else {
+          dispatch(appActions.setError(data.message));
+        }
+      });
+    }
   },
   // 获取帖子详情
-  fetchPost: id => {
-    return (dispatch, getState) => {
-      if (shouldFetchPost(id, getState())) {
-        dispatch(appActions.startRequest());
-        return post(url.getApiUri(), getPostByIdRequest(id)).then(data => {
-          dispatch(appActions.finishRequest());
-          if (data.code === 1) {
-            const { post, author } = convertSinglePostToPlain(data.responseData);
-            dispatch(fetchPostSuccess(post, author));
-          } else {
-            dispatch(appActions.setError(data.message));
-          }
-        });
-      }
-    };
+  fetchPost: id => (dispatch, getState) => {
+    if (shouldFetchPost(id, getState())) {
+      dispatch(appActions.startRequest());
+      return post(url.getApiUri(), getPostByIdRequest(id)).then((data) => {
+        dispatch(appActions.finishRequest());
+        if (data.code === 1) {
+          const { post, author } = convertSinglePostToPlain(data.responseData);
+          dispatch(fetchPostSuccess(post, author));
+        } else {
+          dispatch(appActions.setError(data.message));
+        }
+      });
+    }
   },
   // 新建帖子
-  createPost: (title, content) => {
-    return (dispatch, getState) => {
-      const state = getState();
-      const author = state.getIn(["auth", "userId"]);
-      const params = {
-        author,
-        title,
-        content,
-        vote: 0
-      };
-      dispatch(appActions.startRequest());
-      return post(url.createPost(), params).then(data => {
-        dispatch(appActions.finishRequest());
-        if (!data.error) {
-          dispatch(createPostSuccess(data));
-        } else {
-          dispatch(appActions.setError(data.error));
-        }
-      });
-    };
+  createPost: (title, content) => (dispatch, getState) => {
+    const state = getState();
+    const author = state.getIn(["auth", "userId"]);
+    const params = getNewPostRequest(author, title, content);
+    dispatch(appActions.startRequest());
+    return post(url.getApiUri(), params).then((data) => {
+      dispatch(appActions.finishRequest());
+      if (data.code === 1) {
+        dispatch(createPostSuccess(data.responseData));
+      } else {
+        dispatch(appActions.setError(data.message));
+      }
+    });
   },
   // 更新帖子
-  updatePost: (id, post) => {
-    return dispatch => {
-      dispatch(appActions.startRequest());
-      return put(url.updatePost(id), post).then(data => {
-        dispatch(appActions.finishRequest());
-        if (!data.error) {
-          dispatch(updatePostSuccess(data));
-        } else {
-          dispatch(appActions.setError(data.error));
-        }
-      });
-    };
-  }
+  updatePost: (id, postItem) => (dispatch) => {
+    const params = getUpdatePostRequest(id, postItem.title, postItem.content);
+    dispatch(appActions.startRequest());
+    return post(url.getApiUri(), params).then((data) => {
+      dispatch(appActions.finishRequest());
+      if (data.code === 1) {
+        dispatch(updatePostSuccess(data.responseData));
+      } else {
+        dispatch(appActions.setError(data.message));
+      }
+    });
+  },
 };
 
 // 获取帖子列表成功
@@ -103,29 +107,29 @@ const fetchAllPostsSuccess = (posts, postIds, authors) => ({
   type: types.FETCH_ALL_POSTS,
   posts,
   postIds,
-  users: authors
+  users: authors,
 });
 
 // 获取帖子详情成功
 const fetchPostSuccess = (post, author) => ({
   type: types.FETCH_POST,
   post,
-  user: author
+  user: author,
 });
 
 // 新建帖子成功
 const createPostSuccess = post => ({
   type: types.CREATE_POST,
-  post: post
+  post,
 });
 
 // 修改帖子成功
 const updatePostSuccess = post => ({
   type: types.UPDATE_POST,
-  post: post
+  post,
 });
 
-const shouldFetchAllPosts = state => {
+const shouldFetchAllPosts = (state) => {
   const allIds = state.getIn(["posts", "allIds"]);
   return !allIds || allIds.size === 0;
 };
@@ -134,16 +138,16 @@ const shouldFetchPost = (id, state) => {
   /**
    * state中如果已经存在该post对象，且有content字段，
    * 则表明state中已经有该post的完整信息，无需再次发送请求
-   **/
+   * */
   const post = state.getIn(["posts", "byId", id]);
   return !post || !post.get("content");
 };
 
-const convertPostsToPlain = posts => {
-  let postsById = {};
-  let postsIds = [];
-  let authorsById = {};
-  posts.forEach(item => {
+const convertPostsToPlain = (posts) => {
+  const postsById = {};
+  const postsIds = [];
+  const authorsById = {};
+  posts.forEach((item) => {
     postsById[item.id] = { ...item, author: item.author.id };
     postsIds.push(item.id);
     if (!authorsById[item.author.id]) {
@@ -153,16 +157,16 @@ const convertPostsToPlain = posts => {
   return {
     posts: postsById,
     postsIds,
-    authors: authorsById
+    authors: authorsById,
   };
 };
 
-const convertSinglePostToPlain = post => {
+const convertSinglePostToPlain = (post) => {
   const plainPost = { ...post, author: post.author.id };
   const author = { ...post.author };
   return {
     post: plainPost,
-    author
+    author,
   };
 };
 
@@ -194,7 +198,7 @@ const byId = (state = Immutable.fromJS({}), action) => {
 
 const reducer = combineReducers({
   allIds,
-  byId
+  byId,
 });
 
 export default reducer;
