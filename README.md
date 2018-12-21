@@ -3,7 +3,7 @@
 * 学习过程会结合相关示例代码，在实践中学习更有成效。
 * 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
 
-# 当前 master 示例
+# 当前分支 bbs-apicloud，对应示例
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
 - 该bbs内置三个用户
@@ -11,10 +11,6 @@
     - jack
     - steve
 - 密码都是：123456
-
-# 计划
-1. [ ] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。
-1. [ ] 用 [ant-design](https://github.com/ant-design/ant-design) 改造页面，同时添加分页功能。
 
 ## 项目依赖及版本
 * 用 Create React App 初始化项目
