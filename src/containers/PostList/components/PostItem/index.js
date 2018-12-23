@@ -1,13 +1,17 @@
 import React from "react";
 import { getFormatDate } from "../../../../utils/date";
+import { Link } from "react-router-dom";
 import "./style.css";
-import like from "../../../../images/like.png";
+import praised from "../../../../images/praised.png";
+import praise from "../../../../images/praise.png";
 
 function PostItem(props) {
   const { post } = props;
   return (
     <li className="postItem">
-      <div className="title">{post.title}</div>
+      <Link key={post.id} to={`/posts/${post.id}`}>
+        <div className="title">{post.title}</div>
+      </Link>
       <div>
         创建人：<span>{post.author.username}</span>
       </div>
@@ -16,7 +20,12 @@ function PostItem(props) {
       </div>
       <div className="like">
         <span>
-          <img alt="vote" src={like} />
+          {post.flagPraise ? (
+            <img alt="vote" src={praised} />
+          ) : (
+            // todo 还未点赞，添加点赞动作
+            <img alt="vote" src={praise} />
+          )}
         </span>
         <span>{post.vote}</span>
       </div>

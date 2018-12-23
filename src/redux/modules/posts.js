@@ -14,10 +14,10 @@ export const types = {
 
 // 获取帖子列表的过滤条件
 // mybatis 动态 order by 不生效，所以，排序规则直接写在 sql 语句里了，而不是通过参数，orderBy 参数可不传。
-const getPostListRequest = {
+const getPostListRequest = userId => ({
   method: "getPostList",
-  jsonStringParameter: JSON.stringify({ recordsLimit: 5, orderBy: "updatedAt DESC" }),
-};
+  jsonStringParameter: JSON.stringify({ recordsLimit: 5, userId, orderBy: "updatedAt DESC" }),
+});
 
 // 获取帖子详情的过滤条件
 const getPostByIdRequest = id => ({
@@ -45,9 +45,13 @@ const getUpdatePostRequest = (postId, title, content) => ({
 export const actions = {
   // 获取帖子列表
   fetchAllPosts: () => (dispatch, getState) => {
+    const state = getState();
+    let userId = state.getIn(["auth", "userId"]);
+    userId = userId === null ? "" : userId;
+
     if (shouldFetchAllPosts(getState())) {
       dispatch(appActions.startRequest());
-      return post(url.getApiUri(), getPostListRequest).then((data) => {
+      return post(url.getApiUri(), getPostListRequest(userId)).then((data) => {
         dispatch(appActions.finishRequest());
         if (data.code === 1) {
           const { posts, postsIds, authors } = convertPostsToPlain(data.responseData);

@@ -1,7 +1,7 @@
 import React from "react";
 import { getFormatDate } from "../../../../utils/date";
 import "./style.css";
-import like from "../../../../images/like.png";
+import like from "../../../../images/praised.png";
 
 function PostView(props) {
   const { post, editable, onEditClick } = props;

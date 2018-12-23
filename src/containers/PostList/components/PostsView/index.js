@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import PostItem from "../PostItem";
 
 class PostsView extends Component {
+  // todo
+  handlePraiseClick = () => {
+
+  };
+
   render() {
     const { posts } = this.props
     return (
       <ul>
         {posts.map(item => (
-          <Link key={item.id} to={`/posts/${item.id}`}>
-            <PostItem post={item} />
-          </Link>
+          <PostItem post={item} />
         ))}
       </ul>
     );
