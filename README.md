@@ -23,8 +23,9 @@
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
 # 计划
-1. [x] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。（[spring-boot-bbs-api](https://github.com/uncleAndyChen/spring-boot-bbs-api)）
-1. [ ] 用 [ant-design](https://github.com/ant-design/ant-design) 改造页面，同时添加分页功能。
+- [x] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。（[spring-boot-bbs-api](https://github.com/uncleAndyChen/spring-boot-bbs-api)）
+- [ ] 增加点赞功能（点赞之前需要先登录，每个用户对同一个帖子，点赞之后可取消点赞，类似微信朋友圈儿的点赞功能）
+- [ ] 用 [ant-design](https://github.com/ant-design/ant-design) 改造页面，同时添加分页功能。
 
 ## 项目依赖及版本
 * 用 Create React App 初始化项目

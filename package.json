@@ -1,5 +1,5 @@
 {
-  "name": "bbs-redux-reselect",
+  "name": "bbs-spring-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +20,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8080/",
+  "proxy": "http://localhost:88/",
   "browserslist": [
     ">0.2%",
     "not dead",
