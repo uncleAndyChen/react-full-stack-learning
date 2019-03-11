@@ -20,7 +20,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:88/",
+  "proxy": "http://localhost:89/",
   "browserslist": [
     ">0.2%",
     "not dead",
