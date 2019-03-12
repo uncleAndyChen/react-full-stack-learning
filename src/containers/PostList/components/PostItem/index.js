@@ -1,5 +1,4 @@
 import React from "react";
-import { getFormatDate } from "../../../../utils/date";
 import { Link } from "react-router-dom";
 import "./style.css";
 import praised from "../../../../images/praised.png";
@@ -16,7 +15,7 @@ function PostItem(props) {
         创建人：<span>{post.author.username}</span>
       </div>
       <div>
-        更新时间：<span>{getFormatDate(post.updatedAt)}</span>
+        更新时间：<span>{post.updatedAt}</span>
       </div>
       <div className="like">
         <span>

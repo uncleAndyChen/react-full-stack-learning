@@ -1,5 +1,4 @@
 import React from "react";
-import { getFormatDate } from "../../../../utils/date";
 import "./style.css";
 import like from "../../../../images/praised.png";
 
@@ -12,7 +11,7 @@ function PostView(props) {
         <div className="mark">
           <span className="author">{post.author.username}</span>
           <span>·</span>
-          <span>{getFormatDate(post.updatedAt)}</span>
+          <span>{post.updatedAt}</span>
           {editable ? (
             <span>
               ·<button onClick={onEditClick}>编辑</button>
