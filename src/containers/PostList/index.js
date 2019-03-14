@@ -26,6 +26,10 @@ class PostList extends Component {
     this.props.openAddDialog();
   };
 
+  handlePraise = (postId) => {
+    this.props.postVoteAdd(postId);
+  };
+
   render() {
     const { posts, user, isAddDialogOpen } = this.props;
     const rawPosts = posts.toJS();
@@ -40,7 +44,7 @@ class PostList extends Component {
         {isAddDialogOpen ? (
           <PostEditor onSave={this.handleSave} onCancel={this.handleCancel} />
         ) : null}
-        <PostsView posts={rawPosts} />
+        <PostsView posts={rawPosts} onPraise={this.handlePraise} />
       </div>
     );
   }

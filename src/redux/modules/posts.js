@@ -10,6 +10,10 @@ export const types = {
   UPDATE_POST: "POSTS/UPDATE_POST",
   FETCH_ALL_POSTS: "POSTS/FETCH_ALL_POSTS", // 获取帖子列表
   FETCH_POST: "POSTS/FETCH_POST", // 获取帖子详情
+  POST_VOTE_ADD: "POST/VOTE_ADD", // 点赞
+  POST_VOTE_CANCEL: "POST/VOTE_CANCEL", // 取消点赞
+  POST_PRAISE_ADD: "POST/PRAISE_ADD", // 收藏
+  POST_PRAISE_CANCEL: "POST/PRAISE_CANCEL", // 取消收藏
 };
 
 // 获取帖子列表的过滤条件
@@ -40,8 +44,37 @@ const getUpdatePostRequest = (postId, title, content) => ({
   }),
 });
 
+// 给帖子点赞
+const getPostVoteAddRequest = (postId, userId) => ({
+  method: "userStarAndPraiseInsert",
+  jsonStringParameter: JSON.stringify({
+    postId, userId, mapType: 2,
+  }),
+});
+
 // action creators
 export const actions = {
+  // 点赞
+  postVoteAdd: postId => (dispatch, getState) => {
+    const state = getState();
+    let userId = state.getIn(["auth", "userId"]);
+
+    if (userId === null) {
+      alert("请先登录");
+      return;
+    }
+
+    dispatch(appActions.startRequest());
+    return post(url.getApiUri(), getPostVoteAddRequest(postId, userId)).then((data) => {
+      dispatch(appActions.finishRequest());
+      if (data.code === 1) {
+        dispatch(createPostSuccess(data.responseData));
+      } else {
+        dispatch(appActions.setError(data.message));
+      }
+    });
+  },
+
   // 获取帖子列表
   fetchAllPosts: () => (dispatch, getState) => {
     const state = getState();

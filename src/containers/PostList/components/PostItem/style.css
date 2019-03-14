@@ -34,3 +34,6 @@
   width: 100%;
 }
 
+imgLink {
+  cursor: pointer;
+}
