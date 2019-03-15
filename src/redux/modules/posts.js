@@ -10,10 +10,15 @@ export const types = {
   UPDATE_POST: "POSTS/UPDATE_POST",
   FETCH_ALL_POSTS: "POSTS/FETCH_ALL_POSTS", // 获取帖子列表
   FETCH_POST: "POSTS/FETCH_POST", // 获取帖子详情
-  POST_VOTE_ADD: "POST/VOTE_ADD", // 点赞
-  POST_VOTE_CANCEL: "POST/VOTE_CANCEL", // 取消点赞
-  POST_PRAISE_ADD: "POST/PRAISE_ADD", // 收藏
-  POST_PRAISE_CANCEL: "POST/PRAISE_CANCEL", // 取消收藏
+  POST_STAR: "POST/POST_STAR", // 收藏
+  POST_PRAISE: "POST/POST_PRAISE", // 点赞
+};
+
+export const praiseOrStarTypes = {
+  mapTypeStar: 1, // 收藏
+  mapTypePraise: 2, //点赞
+  methodInsert: "userStarAndPraiseInsert",
+  methodDelete: "userStarAndPraiseDelete",
 };
 
 // 获取帖子列表的过滤条件
@@ -44,18 +49,18 @@ const getUpdatePostRequest = (postId, title, content) => ({
   }),
 });
 
-// 给帖子点赞
-const getPostVoteAddRequest = (postId, userId) => ({
-  method: "userStarAndPraiseInsert",
+// 给帖子点赞/取消点赞、收藏/取消收藏
+const getPostPraiseOrStarRequest = (postId, userId, mapType, method) => ({
+  method,
   jsonStringParameter: JSON.stringify({
-    postId, userId, mapType: 2,
+    postId, userId, mapType,
   }),
 });
 
 // action creators
 export const actions = {
-  // 点赞
-  postVoteAdd: postId => (dispatch, getState) => {
+  // 给帖子点赞/取消点赞、收藏/取消收藏
+  postPraiseOrStar: (postItem, mapType, method) => (dispatch, getState) => {
     const state = getState();
     let userId = state.getIn(["auth", "userId"]);
 
@@ -65,10 +70,10 @@ export const actions = {
     }
 
     dispatch(appActions.startRequest());
-    return post(url.getApiUri(), getPostVoteAddRequest(postId, userId)).then((data) => {
+    return post(url.getApiUri(), getPostPraiseOrStarRequest(postItem.id, userId, mapType, method)).then((data) => {
       dispatch(appActions.finishRequest());
       if (data.code === 1) {
-        dispatch(createPostSuccess(data.responseData));
+        dispatch(postPraiseOrStarSuccess(postItem, mapType, method));
       } else {
         dispatch(appActions.setError(data.message));
       }
@@ -166,6 +171,23 @@ const updatePostSuccess = post => ({
   post,
 });
 
+// 给帖子点赞成功
+const postPraiseOrStarSuccess = (post, mapType, method) => {
+  let type = null;
+
+  if (mapType === praiseOrStarTypes.mapTypeStar) {
+    type = types.POST_STAR;
+  } else if (mapType === praiseOrStarTypes.mapTypePraise) {
+    type = types.POST_PRAISE;
+  }
+
+  return {
+    type,
+    post,
+    method,
+  }
+};
+
 const shouldFetchAllPosts = (state) => {
   const allIds = state.getIn(["posts", "allIds"]);
   return !allIds || allIds.size === 0;
@@ -221,6 +243,8 @@ const allIds = (state = Immutable.fromJS([]), action) => {
 };
 
 const byId = (state = Immutable.fromJS({}), action) => {
+  let newPost = null;
+
   switch (action.type) {
     case types.FETCH_ALL_POSTS:
       return state.merge(action.posts);
@@ -228,10 +252,31 @@ const byId = (state = Immutable.fromJS({}), action) => {
     case types.CREATE_POST:
     case types.UPDATE_POST:
       return state.merge({ [action.post.id]: action.post });
+    case types.POST_PRAISE:
+      let vote = getVoteByMehtod(action.post.vote, action.method);
+      newPost = {...action.post, vote, author: action.post.author.id, flagPraise: getPraiseOrStarFlagByMethod(action.method)};
+      return state.merge({ [action.post.id]: newPost });
+    case types.POST_STAR:
+      newPost = {...action.post, author: action.post.author.id, flagStar: getPraiseOrStarFlagByMethod(action.method)};
+      return state.merge({ [action.post.id]: newPost });
     default:
       return state;
   }
 };
+
+function getVoteByMehtod(vote, method) {
+  if (method === praiseOrStarTypes.methodInsert) {
+    vote++;
+  } else {
+    vote--;
+  }
+
+  return vote;
+}
+
+function getPraiseOrStarFlagByMethod(method) {
+  return method === praiseOrStarTypes.methodInsert;
+}
 
 const reducer = combineReducers({
   allIds,

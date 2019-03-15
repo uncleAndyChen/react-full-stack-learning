@@ -7,7 +7,7 @@ class PostsView extends Component {
     return (
       <ul>
         {posts.map(item => (
-          <PostItem post={item} onPraise={this.props.onPraise} />
+          <PostItem key={item.id} post={item} onPraiseOrStar={this.props.onPraiseOrStar} />
         ))}
       </ul>
     );
