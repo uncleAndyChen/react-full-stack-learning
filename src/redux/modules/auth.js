@@ -29,14 +29,22 @@ export const actions = {
       dispatch(appActions.finishRequest());
       if (data.code === 1) {
         dispatch(actions.setLoginInfo(data.responseData.userId, username));
+        window.location.reload();
       } else {
         dispatch(appActions.setError(data.message));
       }
     });
   },
-  logout: () => ({
-    type: types.LOGOUT,
-  }),
+  logout: () => (dispatch) => {
+    dispatch({
+          type: types.LOGOUT,
+        }
+    );
+
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("username");
+    window.location.reload();
+  },
   setLoginInfo: (userId, username) => ({
     type: types.LOGIN,
     userId,
