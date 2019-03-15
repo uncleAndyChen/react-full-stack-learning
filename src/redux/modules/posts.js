@@ -28,9 +28,11 @@ const getPostListRequest = userId => ({
 });
 
 // 获取帖子详情的过滤条件
-const getPostByIdRequest = id => ({
+const getPostByIdRequest = (id, userId) => ({
   method: "getPostByPrimaryKey",
-  extendValue: id,
+  jsonStringParameter: JSON.stringify({
+    userId, whereFieldValue: id,
+  }),
 });
 
 // 创建帖子请求数据
@@ -62,9 +64,9 @@ export const actions = {
   // 给帖子点赞/取消点赞、收藏/取消收藏
   postPraiseOrStar: (postItem, mapType, method) => (dispatch, getState) => {
     const state = getState();
-    let userId = state.getIn(["auth", "userId"]);
+    let userId = getUserId(state);
 
-    if (userId === null) {
+    if (userId === 0) {
       alert("请先登录");
       return;
     }
@@ -103,10 +105,10 @@ export const actions = {
   fetchPost: id => (dispatch, getState) => {
     if (shouldFetchPost(id, getState())) {
       dispatch(appActions.startRequest());
-      return post(url.getApiUri(), getPostByIdRequest(id)).then((data) => {
+      return post(url.getApiUri(), getPostByIdRequest(id, getUserId(getState()))).then((data) => {
         dispatch(appActions.finishRequest());
         if (data.code === 1) {
-          const { post, author } = convertSinglePostToPlain(data.responseData);
+          const { post, author } = convertSinglePostToPlain(data.responseData[0]);
           dispatch(fetchPostSuccess(post, author));
         } else {
           dispatch(appActions.setError(data.message));
@@ -276,6 +278,16 @@ function getVoteByMehtod(vote, method) {
 
 function getPraiseOrStarFlagByMethod(method) {
   return method === praiseOrStarTypes.methodInsert;
+}
+
+function getUserId(state) {
+  let userId = state.getIn(["auth", "userId"]);
+
+  if (userId === null) {
+    userId = 0;
+  }
+
+  return userId;
 }
 
 const reducer = combineReducers({

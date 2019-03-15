@@ -44,6 +44,10 @@ class Post extends Component {
     this.props.createComment(commentRequest);
   };
 
+  handlePraiseOrStar = (postId, mapType, method) => {
+    this.props.postPraiseOrStar(postId, mapType, method);
+  };
+
   render() {
     const { post, comments, user, isEditDialogOpen } = this.props;
     if (!post) {
@@ -65,6 +69,7 @@ class Post extends Component {
             post={rawPost}
             editable={editable}
             onEditClick={this.handleEditClick}
+            onPraiseOrStar={this.handlePraiseOrStar}
           />
         )}
         <CommentList
