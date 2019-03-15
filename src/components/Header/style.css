@@ -26,6 +26,11 @@
   left: 0px;
 }
 
+.header .left-link-star {
+  position: absolute;
+  left: 50px;
+}
+
 .header .right-link {
   position: absolute;
   right: 20px;  

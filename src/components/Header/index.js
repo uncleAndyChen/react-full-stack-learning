@@ -11,6 +11,9 @@ class Header extends Component {
           <span className="left-link">
             <Link to="/">首页</Link>
           </span>
+          <span className="left-link-star">
+            <Link to={`/myStar`} >我的收藏</Link>
+          </span>
           {username && username.length > 0 ? (
             <span className="user">
               当前用户：{username}&nbsp;<button onClick={onLogout}>注销</button>

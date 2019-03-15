@@ -22,9 +22,9 @@ export const praiseOrStarTypes = {
 };
 
 // 获取帖子列表的过滤条件
-const getPostListRequest = userId => ({
+const getPostListRequest = (userId, pathname) => ({
   method: "getPostList",
-  jsonStringParameter: JSON.stringify({ recordsLimit: 5, userId }),
+  jsonStringParameter: JSON.stringify({ recordsLimit: 5, userId, pathname }),
 });
 
 // 获取帖子详情的过滤条件
@@ -83,14 +83,14 @@ export const actions = {
   },
 
   // 获取帖子列表
-  fetchAllPosts: () => (dispatch, getState) => {
+  fetchAllPosts: (pathname) => (dispatch, getState) => {
     const state = getState();
     let userId = state.getIn(["auth", "userId"]);
     userId = userId === null ? "" : userId;
 
     if (shouldFetchAllPosts(getState())) {
       dispatch(appActions.startRequest());
-      return post(url.getApiUri(), getPostListRequest(userId)).then((data) => {
+      return post(url.getApiUri(), getPostListRequest(userId, pathname)).then((data) => {
         dispatch(appActions.finishRequest());
         if (data.code === 1) {
           const { posts, postsIds, authors } = convertPostsToPlain(data.responseData);

@@ -10,8 +10,12 @@ import { getPostListWithAuthors } from "../../redux/modules";
 import "./style.css";
 
 class PostList extends Component {
+  state = {
+    pathname: ""
+  };
+
   componentDidMount() {
-    this.props.fetchAllPosts();
+    this.props.fetchAllPosts(this.props.match.url);
   }
 
   handleSave = data => {
