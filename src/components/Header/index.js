@@ -12,7 +12,7 @@ class Header extends Component {
             <Link to="/">首页</Link>
           </span>
           <span className="left-link-star">
-            <Link to={`/myStar`} >我的收藏</Link>
+            <Link to={`/myPost`} >我的帖子</Link>
           </span>
           {username && username.length > 0 ? (
             <span className="user">

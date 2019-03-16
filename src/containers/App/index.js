@@ -31,7 +31,7 @@ class App extends Component {
             <Route exact path="/" component={AsyncHome} />
             <Route path="/login" component={AsyncLogin} />
             <Route path="/posts" component={AsyncHome} />
-            <Route path="/myStar" component={AsyncHome} />
+            <Route path="/myPost" component={AsyncHome} />
           </Switch>
         </Router>
         {errorDialog}

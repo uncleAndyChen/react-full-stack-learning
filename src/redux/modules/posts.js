@@ -24,7 +24,7 @@ export const praiseOrStarTypes = {
 // 获取帖子列表的过滤条件
 const getPostListRequest = (userId, pathname) => ({
   method: "getPostList",
-  jsonStringParameter: JSON.stringify({ recordsLimit: 5, userId, pathname }),
+  jsonStringParameter: JSON.stringify({ recordsLimit: 0, userId, pathname }),
 });
 
 // 获取帖子详情的过滤条件

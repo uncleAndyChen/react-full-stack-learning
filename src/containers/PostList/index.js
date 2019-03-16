@@ -10,10 +10,6 @@ import { getPostListWithAuthors } from "../../redux/modules";
 import "./style.css";
 
 class PostList extends Component {
-  state = {
-    pathname: ""
-  };
-
   componentDidMount() {
     this.props.fetchAllPosts(this.props.match.url);
   }
@@ -35,20 +31,30 @@ class PostList extends Component {
   };
 
   render() {
-    const { posts, user, isAddDialogOpen } = this.props;
-    const rawPosts = posts.toJS();
+    const { posts, user, isAddDialogOpen, location } = this.props;
+    let userId = user.get("userId");
+    let rawPosts = posts.toJS();
+
+    userId = userId === null ? "0" : userId;
+
+    if (location.pathname === "/myPost" && userId !== "0") {
+      rawPosts = rawPosts.filter((postItem) => {
+        return postItem.author.id === userId;
+      });
+    }
+
     return (
       <div className="postList">
         <div>
           <h2>话题列表</h2>
-          {user.get("userId") ? (
+          {userId !== "0" ? (
             <button onClick={this.handleNewPost}>发帖</button>
           ) : null}
         </div>
         {isAddDialogOpen ? (
           <PostEditor onSave={this.handleSave} onCancel={this.handleCancel} />
         ) : null}
-        <PostsView posts={rawPosts} onPraiseOrStar={this.handlePraiseOrStar} />
+        {(location.pathname === "/myPost" && userId === "0") ? (<div><hr/>请登录后查看</div>) : <PostsView posts={rawPosts} onPraiseOrStar={this.handlePraiseOrStar} />}
       </div>
     );
   }
