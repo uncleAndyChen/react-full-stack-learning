@@ -23,8 +23,10 @@
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
 # 计划
-- [x] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。（[spring-boot-bbs-api](https://github.com/uncleAndyChen/spring-boot-bbs-api)）
-- [x] 增加点赞/收藏功能（点赞/收藏之前需要先登录，每个用户对同一个帖子，点赞/收藏之后可取消点赞/收藏，类似微信朋友圈儿的点赞功能）
+- [x] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。（[spring-boot-bbs-api](https://github.com/uncleAndyChen/spring-boot-bbs-api)）。
+- [x] 增加点赞/收藏功能（点赞/收藏之前需要先登录，每个用户对同一个帖子，点赞/收藏之后可取消点赞/收藏，类似微信朋友圈儿的点赞功能）。
+    - 【我的收藏】菜单，决定不做了。之后如果有时间，会把精力投入到 [ant-design-pro](https://github.com/ant-design/ant-design-pro)。
+- [x] 增加菜单【我的帖子】，只是简单的过滤，没有重新从服务器获取。目前页面显示的是所有帖子。
 
 ## 项目依赖及版本
 * 用 Create React App 初始化项目
