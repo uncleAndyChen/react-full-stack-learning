@@ -47,7 +47,9 @@
 
 # 相关文档
 > 友情提示：如果要**在新窗口中打开**以下链接，请按住 Ctrl 键再点相关链接。
-
+>
+1. [Ant Design Pro v4 从后端下载 excel，后端返回的是文件流](https://www.lovesofttech.com/react/antDesignProDownloadExcel)
+1. [Ant Design Pro v4 开发备忘，TypeScript 版本](https://www.lovesofttech.com/react/antDesignProTs)
 1. [相关知识储备](./doc/prepare.md)
 1. [js 知识点](./doc/js.md)
 1. [redux 知识点](./doc/redux.md)
