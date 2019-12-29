@@ -3,6 +3,8 @@
 * 学习过程会结合相关示例代码，在实践中学习更有成效。
 * 欢迎补充，可通过 fork + pull request 的方式，参与到该项目。
 
+# 运行
+
 # master 分支
 与后端项目配合，取代 APICloud API 方式。
 
@@ -13,6 +15,19 @@
     - steve
     - AndyChen
 - 密码都是：123456
+
+## 运行
+- 克隆后端代码，用你喜欢的 IDE 导入项目并启动，默认端口是89
+```
+git clone https://github.com/uncleAndyChen/spring-boot-bbs-api.git
+```
+- 克隆前端代码、安装依赖、运行
+```
+git clone https://github.com/uncleAndyChen/react-full-stack-learning.git
+cd react-full-stack-learning.git
+npm i
+npm start
+```
 
 # bbs-apicloud 分支
 - 不需要依赖后台 api 项目，用的在线 api，已经配置好，克隆到本地后，直接启动项目即可查看效果。
@@ -25,6 +40,13 @@
 ```
 git clone https://github.com/uncleAndyChen/react-full-stack-learning.git
 git checkout bbs-apicloud 
+```
+
+## 运行
+通过上述方式克隆本分支到本地后，执行以下脚本：
+```
+npm i
+npm start
 ```
 
 ## 后端项目地址
