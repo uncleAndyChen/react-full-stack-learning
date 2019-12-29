@@ -14,13 +14,21 @@
     - AndyChen
 - 密码都是：123456
 
-## 后端项目地址
-* 托管在 github 上的项目链接：https://github.com/uncleAndyChen/spring-boot-bbs-api
-* 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/spring-boot-bbs-api
-
 # bbs-apicloud 分支
 - 仅对《React进阶之路》第九章示例[bbs-redux-reselect](https://github.com/xuchaobei/react-book/tree/master/chapter-09/bbs-redux-reselect)添加一些备注，增加 ESLint检查，代码逻辑基本保留。
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
+
+获取该分支：
+- 指定方该分支克隆：`git clone -b bbs-apicloud https://github.com/uncleAndyChen/react-full-stack-learning.git`
+- 不指定分支，先全部克隆，然后切换到 bbs-apicloud
+```
+git clone https://github.com/uncleAndyChen/react-full-stack-learning.git
+git checkout bbs-apicloud 
+```
+
+## 后端项目地址
+* 托管在 github 上的项目链接：https://github.com/uncleAndyChen/spring-boot-bbs-api
+* 托管在 gitee 上的项目链接 ：https://gitee.com/uncleAndyChen/spring-boot-bbs-api
 
 # 计划
 - [x] 提供与该示例配套的 spring boot 后端 API 代替 APICloud API。（[spring-boot-bbs-api](https://github.com/uncleAndyChen/spring-boot-bbs-api)）。
