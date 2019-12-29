@@ -15,10 +15,11 @@
 - 密码都是：123456
 
 # bbs-apicloud 分支
+- 不需要依赖后台 api 项目，用的在线 api，已经配置好，克隆到本地后，直接启动项目即可查看效果。
 - 仅对《React进阶之路》第九章示例[bbs-redux-reselect](https://github.com/xuchaobei/react-book/tree/master/chapter-09/bbs-redux-reselect)添加一些备注，增加 ESLint检查，代码逻辑基本保留。
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
-获取该分支：
+## 获取该分支
 - 克隆时，通过参数 `-b` 指定该分支：`git clone -b bbs-apicloud https://github.com/uncleAndyChen/react-full-stack-learning.git`
 - 不指定分支，先全部克隆，然后通过 `git checkout` 切换到该分支 `bbs-apicloud`
 ```
