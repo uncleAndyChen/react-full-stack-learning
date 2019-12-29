@@ -28,7 +28,7 @@ npm start
 ```
 
 # bbs-apicloud 分支
-- 不需要依赖后台 api 项目，用的在线 api，已经配置好，克隆到本地后，直接启动项目即可查看效果。
+- 不需要依赖后端 api 项目，用的在线 api，已经配置好，克隆到本地后，直接启动项目即可查看效果。
 - 仅对《React进阶之路》第九章示例[bbs-redux-reselect](https://github.com/xuchaobei/react-book/tree/master/chapter-09/bbs-redux-reselect)添加一些备注，增加 ESLint检查，代码逻辑基本保留。
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
