@@ -15,7 +15,7 @@
 - 密码都是：123456
 
 ## 运行
-**请注意，master 版本，需要所后端代码配合，如果不想运行后端Java项目，请参考：bbs-apicloud 分支**
+**请注意，master 版本，需要与后端项目配合才可以运行，如果不想运行后端Java项目，请参考：bbs-apicloud 分支**
 - 克隆后端代码，用你喜欢的 IDE 导入项目并启动，默认端口是89
 ```
 git clone https://github.com/uncleAndyChen/spring-boot-bbs-api.git
