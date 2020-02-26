@@ -15,6 +15,7 @@
 - 密码都是：123456
 
 ## 运行
+**请注意，master 版本，需要所后端代码配合，如果不想运行后端Java项目，请参考：bbs-apicloud 分支**
 - 克隆后端代码，用你喜欢的 IDE 导入项目并启动，默认端口是89
 ```
 git clone https://github.com/uncleAndyChen/spring-boot-bbs-api.git
@@ -33,8 +34,8 @@ npm start
 - [《React进阶之路》第九章示例 bbs-redux-reselect 解读](https://www.lovesofttech.com/react/reactAdvancedStageBBSUnscramble)
 
 ## 获取该分支
-- 克隆时，通过参数 `-b` 指定该分支：`git clone -b bbs-apicloud https://github.com/uncleAndyChen/react-full-stack-learning.git`
-- 不指定分支，先全部克隆，然后通过 `git checkout` 切换到该分支 `bbs-apicloud`
+- 第一种方式：克隆时，通过参数 `-b` 指定该分支：`git clone -b bbs-apicloud https://github.com/uncleAndyChen/react-full-stack-learning.git`
+- 第二种方式：不指定分支，先全部克隆，然后通过 `git checkout` 切换到该分支 `bbs-apicloud`
 ```
 git clone https://github.com/uncleAndyChen/react-full-stack-learning.git
 git checkout bbs-apicloud 
